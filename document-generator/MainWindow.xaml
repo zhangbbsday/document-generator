@@ -1,0 +1,26 @@
+﻿<Window x:Class="document_generator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:basic="clr-namespace:BasicControlLibrary;assembly=BasicControlLibrary"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid ShowGridLines="True">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <basic:Menu Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Top"></basic:Menu>
+        <basic:DocumentList Grid.Row="1" Grid.Column="0"></basic:DocumentList>
+        <basic:DocumentContent Grid.Row="1" Grid.Column="1"></basic:DocumentContent>
+        <basic:BottomEdge Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Height="20"></basic:BottomEdge>
+    </Grid>
+</Window>

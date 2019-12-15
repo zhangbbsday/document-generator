@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "document-generator/1.0.0": {
+        "dependencies": {
+          "BasicControlLibrary": "1.0.0"
+        },
+        "runtime": {
+          "document-generator.dll": {}
+        }
+      },
+      "BasicControlLibrary/1.0.0": {
+        "runtime": {
+          "BasicControlLibrary.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "document-generator/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BasicControlLibrary/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
