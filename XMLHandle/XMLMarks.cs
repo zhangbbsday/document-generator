@@ -9,6 +9,7 @@ namespace XMLHandle
     /// </summary>
     public enum XMLMarks
     {
+        Mumber,
         Summary,
         ReMarks,
         Returns,

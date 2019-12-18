@@ -1,0 +1,11 @@
+D:\data\WPF\document-generator\XMLTest\bin\Debug\netcoreapp3.1\XMLTest.exe
+D:\data\WPF\document-generator\XMLTest\bin\Debug\netcoreapp3.1\XMLTest.deps.json
+D:\data\WPF\document-generator\XMLTest\bin\Debug\netcoreapp3.1\XMLTest.runtimeconfig.json
+D:\data\WPF\document-generator\XMLTest\bin\Debug\netcoreapp3.1\XMLTest.runtimeconfig.dev.json
+D:\data\WPF\document-generator\XMLTest\bin\Debug\netcoreapp3.1\XMLTest.dll
+D:\data\WPF\document-generator\XMLTest\bin\Debug\netcoreapp3.1\XMLTest.pdb
+D:\data\WPF\document-generator\XMLTest\obj\Debug\netcoreapp3.1\XMLTest.csprojAssemblyReference.cache
+D:\data\WPF\document-generator\XMLTest\obj\Debug\netcoreapp3.1\XMLTest.AssemblyInfoInputs.cache
+D:\data\WPF\document-generator\XMLTest\obj\Debug\netcoreapp3.1\XMLTest.AssemblyInfo.cs
+D:\data\WPF\document-generator\XMLTest\obj\Debug\netcoreapp3.1\XMLTest.dll
+D:\data\WPF\document-generator\XMLTest\obj\Debug\netcoreapp3.1\XMLTest.pdb

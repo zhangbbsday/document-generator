@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Xml.Linq;
+using System.Threading.Tasks;
 using System.IO;
+using System.Linq;
 
 namespace XMLHandle
 {
@@ -40,10 +42,27 @@ namespace XMLHandle
 
         public void Read()
         {
+            var items = from item in Document.Descendants(MarksReader[XMLMarks.Mumber])
+                        select new
+                        {
+                            Name = item.Attribute("name").Value,
+                            Summary = item.Element(MarksReader[XMLMarks.Summary]).Value,
+                            Param = from param in item.Elements(MarksReader[XMLMarks.Param])
+                                    select new
+                                    {
+                                        Name = param.Attribute("name").Value,
+                                        Content = param.Value
+                                    },
+                            Return = item.Element(MarksReader[XMLMarks.Returns]).Value,
+                        };
 
+            foreach (var item in items)
+            {
+
+            }
         }
 
-        public async void Save()
+        public void Save(string path = "")
         {
             
         }

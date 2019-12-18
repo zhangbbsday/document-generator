@@ -1,7 +1,6 @@
 D:\data\WPF\document-generator\BasicControlLibrary\bin\Debug\netcoreapp3.1\BasicControlLibrary.deps.json
 D:\data\WPF\document-generator\BasicControlLibrary\bin\Debug\netcoreapp3.1\BasicControlLibrary.dll
 D:\data\WPF\document-generator\BasicControlLibrary\bin\Debug\netcoreapp3.1\BasicControlLibrary.pdb
-D:\data\WPF\document-generator\BasicControlLibrary\obj\Debug\netcoreapp3.1\BasicControlLibrary.csprojAssemblyReference.cache
 D:\data\WPF\document-generator\BasicControlLibrary\obj\Debug\netcoreapp3.1\BasicControlLibrary.AssemblyInfoInputs.cache
 D:\data\WPF\document-generator\BasicControlLibrary\obj\Debug\netcoreapp3.1\BasicControlLibrary.AssemblyInfo.cs
 D:\data\WPF\document-generator\BasicControlLibrary\obj\Debug\netcoreapp3.1\BasicControlLibrary.dll
