@@ -9,7 +9,7 @@ namespace XMLHandle
     /// </summary>
     public enum XMLMarks
     {
-        Mumber,
+        Member,
         Summary,
         ReMarks,
         Returns,
@@ -22,6 +22,10 @@ namespace XMLHandle
         See,
         SeeAlso,
         Param,
-        Typeparam
+        Typeparam,
+        List,
+        Item,
+        Term,
+        Description
     }
 }

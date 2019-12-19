@@ -7,7 +7,7 @@ namespace XMLHandle
     /// <summary>
     /// 用于储存 XML 文档信息
     /// </summary>
-    class XMLContent
+    public class XMLContent
     {
         public string Name { get; private set; }
         /// <summary>

@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {}
+    ".NETCoreApp,Version=v3.1": {
+      "XMLHandle/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/XMLHandle.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/XMLHandle.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "XMLHandle/1.0.0": {
+      "type": "project",
+      "path": "../XMLHandle/XMLHandle.csproj",
+      "msbuildProject": "../XMLHandle/XMLHandle.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": []
+    ".NETCoreApp,Version=v3.1": [
+      "XMLHandle >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\火提昂\\.nuget\\packages\\": {},
@@ -36,7 +55,11 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\data\\WPF\\document-generator\\XMLHandle\\XMLHandle.csproj": {
+              "projectPath": "D:\\data\\WPF\\document-generator\\XMLHandle\\XMLHandle.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

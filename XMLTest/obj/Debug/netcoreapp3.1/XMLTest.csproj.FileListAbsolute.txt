@@ -9,3 +9,6 @@ D:\data\WPF\document-generator\XMLTest\obj\Debug\netcoreapp3.1\XMLTest.AssemblyI
 D:\data\WPF\document-generator\XMLTest\obj\Debug\netcoreapp3.1\XMLTest.AssemblyInfo.cs
 D:\data\WPF\document-generator\XMLTest\obj\Debug\netcoreapp3.1\XMLTest.dll
 D:\data\WPF\document-generator\XMLTest\obj\Debug\netcoreapp3.1\XMLTest.pdb
+D:\data\WPF\document-generator\XMLTest\bin\Debug\netcoreapp3.1\XMLHandle.dll
+D:\data\WPF\document-generator\XMLTest\bin\Debug\netcoreapp3.1\XMLHandle.pdb
+D:\data\WPF\document-generator\XMLTest\obj\Debug\netcoreapp3.1\XMLTest.csproj.CopyComplete
