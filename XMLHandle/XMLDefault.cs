@@ -33,6 +33,7 @@ namespace XMLHandle
         public static Dictionary<XMLMainMarks, string> XMLMainMarksDefault = new Dictionary<XMLMainMarks, string>
         {
             [XMLMainMarks.NameSpace] = "namespace",
+            [XMLMainMarks.DefaultClass] = "defaultclass",
             [XMLMainMarks.Class] = "class",
             [XMLMainMarks.Struct] = "struct",
             [XMLMainMarks.Enum] = "enum",

@@ -89,39 +89,50 @@ namespace XMLHandle
         private XElement AddMainElement(XElement root, XElement xElement, string memberName)
         {
             XElement add;
-            bool isParent = false;
+            char type = memberName[0];
             memberName = StringHandle.RemoveInvalidCharacter(memberName);
-            switch (Enum.Parse(typeof(XMLMemberType), memberName[0].ToString()))
+            string trueMemberName = memberName.Substring(1);
+
+            switch (type)
             {
-                case XMLMemberType.T:
+                case 'T':
                     add = new XElement(XMLDefault.XMLMainMarksDefault[XMLMainMarks.Class],
                         new XAttribute("name", memberName));
-                    isParent = true;
                     break;
-                case XMLMemberType.P:
+                case 'P':
                     add = new XElement(XMLDefault.XMLMainMarksDefault[XMLMainMarks.Property],
                         new XAttribute("name", memberName));
                     break;
-                case XMLMemberType.F:
+                case 'F':
                     add = new XElement(XMLDefault.XMLMainMarksDefault[XMLMainMarks.Field],
                         new XAttribute("name", memberName));
                     break;
-                case XMLMemberType.M:
+                case 'M':
                     add = new XElement(XMLDefault.XMLMainMarksDefault[XMLMainMarks.Method],
-                            new XAttribute("name", memberName));
+                        new XAttribute("name", memberName));
                     break;
                 default:
                     add = new XElement("Null");
                     break;
             }
-            if (isParent)
-                root.Add(add);
-            else
-                xElement.Add(add);
 
-            if (isParent)
-                return add;
-            return xElement;
+            while (xElement.Parent != null)
+            {
+                if (trueMemberName.StartsWith(xElement.Attribute("name").Value.Substring(1)))
+                    break;
+                xElement = xElement.Parent;
+            }
+
+            if (type != 'T' && xElement.Name == XMLDefault.XMLMainMarksDefault[XMLMainMarks.NameSpace])
+            {
+                if (root.Element(XMLDefault.XMLMainMarksDefault[XMLMainMarks.DefaultClass]) == null)
+                    root.Add(new XElement(XMLDefault.XMLMainMarksDefault[XMLMainMarks.DefaultClass], new XAttribute("name", "Null")));
+
+                xElement = root.Element(XMLDefault.XMLMainMarksDefault[XMLMainMarks.DefaultClass]);
+            }
+                
+            xElement.Add(add);
+            return add;
         }
     }
 }

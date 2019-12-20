@@ -8,6 +8,7 @@ namespace XMLHandle
     {
         NameSpace,
         Class,
+        DefaultClass,
         Struct,
         Enum,
         Property,
