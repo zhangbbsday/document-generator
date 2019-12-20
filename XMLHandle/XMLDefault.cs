@@ -11,6 +11,7 @@ namespace XMLHandle
         /// </summary>
         public static Dictionary<XMLMarks, string> XMLMarksDefault = new Dictionary<XMLMarks, string>
         {
+            [XMLMarks.Assembly] = "assembly",
             [XMLMarks.Member] = "member",
             [XMLMarks.Summary] = "summary",
             [XMLMarks.Param] = "param",
@@ -29,7 +30,16 @@ namespace XMLHandle
             [XMLMarks.Term] = "term",
             [XMLMarks.Description] = "description",
         };
-
+        public static Dictionary<XMLMainMarks, string> XMLMainMarksDefault = new Dictionary<XMLMainMarks, string>
+        {
+            [XMLMainMarks.NameSpace] = "namespace",
+            [XMLMainMarks.Class] = "class",
+            [XMLMainMarks.Struct] = "struct",
+            [XMLMainMarks.Enum] = "enum",
+            [XMLMainMarks.Field] = "field",
+            [XMLMainMarks.Property] = "property",
+            [XMLMainMarks.Method] = "method"
+        };
         public static string XMLDefaultPath = "";
     }
 }

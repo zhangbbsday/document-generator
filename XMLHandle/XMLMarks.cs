@@ -9,6 +9,7 @@ namespace XMLHandle
     /// </summary>
     public enum XMLMarks
     {
+        Assembly,
         Member,
         Summary,
         ReMarks,
@@ -26,6 +27,6 @@ namespace XMLHandle
         List,
         Item,
         Term,
-        Description
+        Description      
     }
 }
