@@ -46,18 +46,18 @@ namespace XMLHandle
         public void Split(string path)
         {
             var members = Document.Descendants(MarksReader[XMLMarks.Member]);
-            string nameSpace = Document.Root.Element(MarksReader[XMLMarks.Assembly]).Element("name").Value;
+            string nameSpace = StringHandle.AddUnderline(Document.Root.Element(MarksReader[XMLMarks.Assembly]).Element("name").Value);
             XDocument mainDocument = new XDocument(
                 new XElement(XMLDefault.XMLMainMarksDefault[XMLMainMarks.NameSpace], 
                 new XAttribute("name", nameSpace)));
 
             XElement xElement = mainDocument.Root;
-            path += nameSpace + @"\";
+            string dataPath = path + nameSpace + @"\";
 
             foreach (var member in members)
             {
                 xElement = AddMainElement(mainDocument.Root, xElement, member.Attribute("name").Value);
-                Save(new XDocument(member), path);   
+                Save(new XDocument(member), dataPath);   
             }
             Save(mainDocument, path, true);
         }
@@ -72,21 +72,11 @@ namespace XMLHandle
             string name = !isMain ? xDocument.Element(MarksReader[XMLMarks.Member]).Attribute("name").Value : 
                 xDocument.Root.Attribute("name").Value;
 
-            StringBuilder stringBuilder = new StringBuilder();
-            var invalidFileNameChars = Path.GetInvalidFileNameChars();
-
+            name = StringHandle.RemoveInvalidCharacter(name);
             if (!Directory.Exists(path))
                 Directory.CreateDirectory(path);
 
-            foreach (var c in name)
-            {
-                if (!invalidFileNameChars.Contains(c))
-                {
-                    stringBuilder.Append(c);
-                }
-            }
-
-            xDocument.Save(path + stringBuilder.ToString() + ".xml");
+            xDocument.Save(path + name + ".xml");
         }
 
         /// <summary>
@@ -100,6 +90,7 @@ namespace XMLHandle
         {
             XElement add;
             bool isParent = false;
+            memberName = StringHandle.RemoveInvalidCharacter(memberName);
             switch (Enum.Parse(typeof(XMLMemberType), memberName[0].ToString()))
             {
                 case XMLMemberType.T:

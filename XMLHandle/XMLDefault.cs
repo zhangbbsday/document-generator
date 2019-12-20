@@ -4,7 +4,7 @@ using System.Text;
 
 namespace XMLHandle
 {
-    public class XMLDefault
+    public static class XMLDefault
     {
         /// <summary>
         /// XMLMarks 的默认值
