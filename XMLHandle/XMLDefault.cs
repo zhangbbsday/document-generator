@@ -41,6 +41,7 @@ namespace XMLHandle
             [XMLMainMarks.Property] = "property",
             [XMLMainMarks.Method] = "method"
         };
-        public static string XMLDefaultPath = "";
+        public static string XMLDefaultPath { get; } = "";
+        public static string MainXMLName { get; } = "main";
     }
 }

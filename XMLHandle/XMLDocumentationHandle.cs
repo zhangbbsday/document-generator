@@ -10,13 +10,13 @@ namespace XMLHandle
     /// <summary>
     /// 用于打开、分割原始XML文件
     /// </summary>
-    public class XMLDocumentation
+    public class XMLDocumentationHandle
     {
         private XDocument Document { get; set; }
         private Dictionary<XMLMarks, string> MarksReader { get; }
 
 
-        public XMLDocumentation(Dictionary<XMLMarks, string> marks)
+        public XMLDocumentationHandle(Dictionary<XMLMarks, string> marks)
         {
             if (marks == null)
                 throw new NullReferenceException("数据不能为空!");
@@ -24,6 +24,10 @@ namespace XMLHandle
             MarksReader = marks;
         }
 
+        /// <summary>
+        /// 打开一个 XML 文档
+        /// </summary>
+        /// <param name="path">XML 文档路径</param>
         public void Open(string path)
         {
             try
@@ -45,21 +49,28 @@ namespace XMLHandle
         /// <param name="path">保存路径</param>
         public void Split(string path)
         {
-            var members = Document.Descendants(MarksReader[XMLMarks.Member]);
-            string nameSpace = StringHandle.AddUnderline(Document.Root.Element(MarksReader[XMLMarks.Assembly]).Element("name").Value);
-            XDocument mainDocument = new XDocument(
-                new XElement(XMLDefault.XMLMainMarksDefault[XMLMainMarks.NameSpace], 
-                new XAttribute("name", nameSpace)));
-
-            XElement xElement = mainDocument.Root;
-            string dataPath = path + nameSpace + @"\";
-
-            foreach (var member in members)
+            try
             {
-                xElement = AddMainElement(mainDocument.Root, xElement, member.Attribute("name").Value);
-                Save(new XDocument(member), dataPath);   
+                var members = Document.Descendants(MarksReader[XMLMarks.Member]);
+                string nameSpace = StringHandle.AddUnderline(Document.Root.Element(MarksReader[XMLMarks.Assembly]).Element("name").Value);
+                XDocument mainDocument = new XDocument(
+                    new XElement(XMLDefault.XMLMainMarksDefault[XMLMainMarks.NameSpace],
+                    new XAttribute("name", nameSpace)));
+
+                XElement xElement = mainDocument.Root;
+                string dataPath = path + @"data\" + nameSpace + @"\";
+
+                foreach (var member in members)
+                {
+                    xElement = AddMainElement(mainDocument.Root, xElement, member.Attribute("name").Value);
+                    Save(new XDocument(member), dataPath);
+                }
+                Save(mainDocument, path + @"data\", true);
             }
-            Save(mainDocument, path, true);
+            catch (Exception)
+            {
+                throw new Exception("XML 文件标记无法识别!");
+            }
         }
 
         /// <summary>
@@ -70,7 +81,7 @@ namespace XMLHandle
         private void Save(XDocument xDocument, string path, bool isMain = false)
         {
             string name = !isMain ? xDocument.Element(MarksReader[XMLMarks.Member]).Attribute("name").Value : 
-                xDocument.Root.Attribute("name").Value;
+                XMLDefault.MainXMLName;
 
             name = StringHandle.RemoveInvalidCharacter(name);
             if (!Directory.Exists(path))
