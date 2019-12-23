@@ -17,3 +17,7 @@ D:\data\WPF\document-generator\document-generator\bin\Debug\netcoreapp3.1\BasicC
 D:\data\WPF\document-generator\document-generator\bin\Debug\netcoreapp3.1\BasicControlLibrary.pdb
 D:\data\WPF\document-generator\document-generator\obj\Debug\netcoreapp3.1\document-generator.csprojAssemblyReference.cache
 D:\data\WPF\document-generator\document-generator\obj\Debug\netcoreapp3.1\document-generator.csproj.CopyComplete
+D:\data\WPF\document-generator\document-generator\bin\Debug\netcoreapp3.1\XMLHandle.dll
+D:\data\WPF\document-generator\document-generator\bin\Debug\netcoreapp3.1\XMLHandle.pdb
+D:\data\WPF\document-generator\document-generator\obj\Debug\netcoreapp3.1\document-generator_MarkupCompile.lref
+D:\data\WPF\document-generator\document-generator\obj\Debug\netcoreapp3.1\App.baml

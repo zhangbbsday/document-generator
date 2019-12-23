@@ -7,14 +7,27 @@
   "targets": {
     ".NETCoreApp,Version=v3.1": {
       "BasicControlLibrary/1.0.0": {
+        "dependencies": {
+          "XMLHandle": "1.0.0"
+        },
         "runtime": {
           "BasicControlLibrary.dll": {}
+        }
+      },
+      "XMLHandle/1.0.0": {
+        "runtime": {
+          "XMLHandle.dll": {}
         }
       }
     }
   },
   "libraries": {
     "BasicControlLibrary/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "XMLHandle/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

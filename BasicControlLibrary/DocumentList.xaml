@@ -9,16 +9,7 @@
     <ScrollViewer VerticalScrollBarVisibility="Auto">
         <StackPanel Background="AliceBlue">
             <Label HorizontalAlignment="Center">文档列表</Label>
-            <TreeView>
-                <TreeViewItem Header="XX命名空间" IsSelected="True">
-                    <TreeViewItem Header="XX类">
-                        <TreeViewItem Header="XX成员"></TreeViewItem>
-                    </TreeViewItem>
-                </TreeViewItem>
-                <TreeViewItem Header="XX命名空间">
-                    
-                </TreeViewItem>
-            </TreeView>
+            <TreeView x:Name="documentList" Initialized="documentList_Initialized" TreeViewItem.Expanded="documentList_Expanded"></TreeView>
         </StackPanel>
     </ScrollViewer>
 </UserControl>

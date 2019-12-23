@@ -5,6 +5,9 @@
       "BasicControlLibrary/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "XMLHandle": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/BasicControlLibrary.dll": {}
         },
@@ -14,6 +17,16 @@
         "frameworkReferences": [
           "Microsoft.WindowsDesktop.App.WPF"
         ]
+      },
+      "XMLHandle/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/XMLHandle.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/XMLHandle.dll": {}
+        }
       }
     }
   },
@@ -22,6 +35,11 @@
       "type": "project",
       "path": "../BasicControlLibrary/BasicControlLibrary.csproj",
       "msbuildProject": "../BasicControlLibrary/BasicControlLibrary.csproj"
+    },
+    "XMLHandle/1.0.0": {
+      "type": "project",
+      "path": "../XMLHandle/XMLHandle.csproj",
+      "msbuildProject": "../XMLHandle/XMLHandle.csproj"
     }
   },
   "projectFileDependencyGroups": {

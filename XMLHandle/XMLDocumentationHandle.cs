@@ -14,8 +14,6 @@ namespace XMLHandle
     {
         private XDocument Document { get; set; }
         private Dictionary<XMLMarks, string> MarksReader { get; }
-
-
         public XMLDocumentationHandle(Dictionary<XMLMarks, string> marks)
         {
             if (marks == null)
@@ -82,12 +80,13 @@ namespace XMLHandle
         {
             string name = !isMain ? xDocument.Element(MarksReader[XMLMarks.Member]).Attribute("name").Value : 
                 XMLDefault.MainXMLName;
+            string extension = !isMain ? ".xmldoc" : ".xmlmain";
 
             name = StringHandle.RemoveInvalidCharacter(name);
             if (!Directory.Exists(path))
                 Directory.CreateDirectory(path);
 
-            xDocument.Save(path + name + ".xml");
+            xDocument.Save(path + name + extension);
         }
 
         /// <summary>

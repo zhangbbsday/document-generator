@@ -19,10 +19,12 @@ namespace XMLTest
 
         static string Open()
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Title = "打开XML文档";
-            openFileDialog.DefaultExt = ".xml";
-            openFileDialog.Filter = "XML文档(.xml)|*.xml";
+            OpenFileDialog openFileDialog = new OpenFileDialog
+            {
+                Title = "打开XML文档",
+                DefaultExt = ".xml",
+                Filter = "XML文档(.xml)|*.xml"
+            };
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
                 return openFileDialog.FileName;
