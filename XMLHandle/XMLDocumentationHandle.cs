@@ -52,15 +52,18 @@ namespace XMLHandle
                 var members = Document.Descendants(MarksReader[XMLMarks.Member]);
                 string nameSpace = StringHandle.AddUnderline(Document.Root.Element(MarksReader[XMLMarks.Assembly]).Element("name").Value);
                 XDocument mainDocument = new XDocument(
-                    new XElement(XMLDefault.XMLMainMarksDefault[XMLMainMarks.NameSpace],
-                    new XAttribute("name", nameSpace)));
+                   new XElement("Root",
+                     new XElement(XMLDefault.XMLMainMarksDefault[XMLMainMarks.NameSpace],
+                     new XAttribute("name", nameSpace))));
 
-                XElement xElement = mainDocument.Root;
+                XElement nameSpaceRoot = mainDocument.Root.Element(XMLDefault.XMLMainMarksDefault[XMLMainMarks.NameSpace]);
+                XElement xElement = nameSpaceRoot;
+
                 string dataPath = path + @"data\" + nameSpace + @"\";
 
                 foreach (var member in members)
                 {
-                    xElement = AddMainElement(mainDocument.Root, xElement, member.Attribute("name").Value);
+                    xElement = AddMainElement(nameSpaceRoot, xElement, member.Attribute("name").Value);
                     Save(new XDocument(member), dataPath);
                 }
                 Save(mainDocument, path + @"data\", true);
@@ -126,7 +129,7 @@ namespace XMLHandle
                     break;
             }
 
-            while (xElement.Parent != null)
+            while (xElement.Parent != root.Parent)
             {
                 if (trueMemberName.StartsWith(xElement.Attribute("name").Value.Substring(1)))
                     break;

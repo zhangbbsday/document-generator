@@ -16,5 +16,5 @@ TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
 193-316459503
 BottomEdge.xaml;DocumentContent.xaml;DocumentList.xaml;Menu.xaml;
 
-False
+True
 

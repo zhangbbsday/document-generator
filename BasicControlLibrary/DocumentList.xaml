@@ -6,10 +6,15 @@
              xmlns:local="clr-namespace:BasicControlLibrary"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <ScrollViewer VerticalScrollBarVisibility="Auto">
-        <StackPanel Background="AliceBlue">
-            <Label HorizontalAlignment="Center">文档列表</Label>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <Label Grid.Row="0" HorizontalAlignment="Center">文档列表</Label>
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
             <TreeView x:Name="documentList" Initialized="documentList_Initialized" TreeViewItem.Expanded="documentList_Expanded"></TreeView>
-        </StackPanel>
-    </ScrollViewer>
+        </ScrollViewer>
+    </Grid>
 </UserControl>
