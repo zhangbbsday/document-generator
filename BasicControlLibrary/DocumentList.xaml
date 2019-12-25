@@ -14,7 +14,7 @@
         
         <Label Grid.Row="0" HorizontalAlignment="Center">文档列表</Label>
         <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
-            <TreeView x:Name="documentList" Initialized="documentList_Initialized" TreeViewItem.Expanded="documentList_Expanded"></TreeView>
+            <TreeView x:Name="documentListTree" TreeViewItem.Expanded="DocumentList_Expanded"></TreeView>
         </ScrollViewer>
     </Grid>
 </UserControl>

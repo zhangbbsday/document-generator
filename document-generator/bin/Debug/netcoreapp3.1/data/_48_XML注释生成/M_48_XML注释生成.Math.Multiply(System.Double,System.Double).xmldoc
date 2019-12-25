@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<member name="M:_48_XML注释生成.Math.Multiply(System.Double,System.Double)">
+  <summary>
+            Multiplies two doubles <paramref name="a" /> and <paramref name="b" /> and returns the result.
+            </summary>
+  <returns>
+            The product of two doubles.
+            </returns>
+  <example>
+    <code>
+            double c = Math.Multiply(4.5, 5.4);
+            if (c &gt; 100.0)
+            {
+                Console.WriteLine(c);
+            }
+            </code>
+  </example>
+            See <see cref="M:_48_XML注释生成.Math.Multiply(System.Int32,System.Int32)" /> to multiply integers.
+            <seealso cref="M:_48_XML注释生成.Math.Add(System.Double,System.Double)" /><seealso cref="M:_48_XML注释生成.Math.Subtract(System.Double,System.Double)" /><seealso cref="M:_48_XML注释生成.Math.Divide(System.Double,System.Double)" /><param name="a">A double precision number.</param><param name="b">A double precision number.</param></member>

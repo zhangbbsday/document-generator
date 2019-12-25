@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<member name="M:_48_XML注释生成.Math.Add(System.Int32,System.Int32)">
+  <summary>
+            Adds two integers <paramref name="a" /> and <paramref name="b" /> and returns the result.
+            </summary>
+  <returns>
+            The sum of two integers.
+            </returns>
+  <example>
+    <code>
+            int c = Math.Add(4, 5);
+            if (c &gt; 10)
+            {
+                Console.WriteLine(c);
+            }
+            </code>
+  </example>
+  <exception cref="T:System.OverflowException">Thrown when one parameter is max 
+            and the other is greater than 0.</exception>
+            See <see cref="M:_48_XML注释生成.Math.Add(System.Double,System.Double)" /> to add doubles.
+            <seealso cref="M:_48_XML注释生成.Math.Subtract(System.Int32,System.Int32)" /><seealso cref="M:_48_XML注释生成.Math.Multiply(System.Int32,System.Int32)" /><seealso cref="M:_48_XML注释生成.Math.Divide(System.Int32,System.Int32)" /><param name="a">An integer.</param><param name="b">An integer.</param></member>

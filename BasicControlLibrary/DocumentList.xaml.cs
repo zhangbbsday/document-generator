@@ -24,10 +24,19 @@ namespace BasicControlLibrary
             InitializeComponent();
         }
 
-        private void documentList_Initialized(object sender, EventArgs e)
+        public void Load(string path)
         {
-            XMLDocumentationMainLoader.OpenMain((string)Application.Current.Resources["mainPath"]);
-            
+            string filePath = path;
+            if (!filePath.EndsWith(".xmlmain"))
+            {
+                if (!System.IO.Directory.Exists(path + XMLDefault.DataDirectory))
+                    throw new System.IO.DirectoryNotFoundException("没有找到data文件夹!");
+                else
+                    filePath += XMLDefault.DataDirectory + XMLDefault.MainXMLName + ".xmlmain";
+            }
+
+            XMLDocumentationMainLoader.OpenMain(filePath);
+
             foreach (var x in XMLDocumentationMainLoader.FindElements(XMLDocumentationMainLoader.MainDocument.Root))
             {
                 TreeViewItem item = new TreeViewItem
@@ -37,7 +46,7 @@ namespace BasicControlLibrary
                 };
                 item.Items.Add("*");
 
-                documentList.Items.Add(item);
+                documentListTree.Items.Add(item);
             }
         }
 
@@ -46,7 +55,7 @@ namespace BasicControlLibrary
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void documentList_Expanded(object sender, RoutedEventArgs e)
+        private void DocumentList_Expanded(object sender, RoutedEventArgs e)
         {
             TreeViewItem select = (TreeViewItem)e.OriginalSource;
             select.Items.Clear();

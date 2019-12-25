@@ -6,6 +6,11 @@
         xmlns:basic="clr-namespace:BasicControlLibrary;assembly=BasicControlLibrary"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.CommandBindings>
+        <CommandBinding Command="basic:MyCommands.New" Executed="NewCommand_Executed"></CommandBinding>
+        <CommandBinding Command="basic:MyCommands.Open" Executed="OpenCommand_Executed"></CommandBinding>
+    </Window.CommandBindings>
+    
     <Grid ShowGridLines="True">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
@@ -18,9 +23,9 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <basic:Menu Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Top"></basic:Menu>
-        <basic:DocumentList Grid.Row="1" Grid.Column="0"></basic:DocumentList>
-        <basic:DocumentContent Grid.Row="1" Grid.Column="1"></basic:DocumentContent>
-        <basic:BottomEdge Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Height="20"></basic:BottomEdge>
+        <basic:Menu x:Name="menu" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Top"></basic:Menu>
+        <basic:DocumentList x:Name="documentList" Grid.Row="1" Grid.Column="0"></basic:DocumentList>
+        <basic:DocumentContent x:Name ="documentContent" Grid.Row="1" Grid.Column="1"></basic:DocumentContent>
+        <basic:BottomEdge x:Name="buttomEdge" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Height="20"></basic:BottomEdge>
     </Grid>
 </Window>

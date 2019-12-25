@@ -59,14 +59,14 @@ namespace XMLHandle
                 XElement nameSpaceRoot = mainDocument.Root.Element(XMLDefault.XMLMainMarksDefault[XMLMainMarks.NameSpace]);
                 XElement xElement = nameSpaceRoot;
 
-                string dataPath = path + @"data\" + nameSpace + @"\";
+                string dataPath = path + XMLDefault.DataDirectory + nameSpace + @"\";
 
                 foreach (var member in members)
                 {
                     xElement = AddMainElement(nameSpaceRoot, xElement, member.Attribute("name").Value);
                     Save(new XDocument(member), dataPath);
                 }
-                Save(mainDocument, path + @"data\", true);
+                Save(mainDocument, path + XMLDefault.DataDirectory, true);
             }
             catch (Exception)
             {

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<member name="M:_48_XML注释生成.Math.Subtract(System.Int32,System.Int32)">
+  <summary>
+            Subtracts <paramref name="b" /> from <paramref name="a" /> and returns the result.
+            </summary>
+  <returns>
+            The difference between two integers.
+            </returns>
+  <example>
+    <code>
+            int c = Math.Subtract(4, 5);
+            if (c &gt; 1)
+            {
+                Console.WriteLine(c);
+            }
+            </code>
+  </example>
+            See <see cref="M:_48_XML注释生成.Math.Subtract(System.Double,System.Double)" /> to subtract doubles.
+            <seealso cref="M:_48_XML注释生成.Math.Add(System.Int32,System.Int32)" /><seealso cref="M:_48_XML注释生成.Math.Multiply(System.Int32,System.Int32)" /><seealso cref="M:_48_XML注释生成.Math.Divide(System.Int32,System.Int32)" /><param name="a">An integer.</param><param name="b">An integer.</param></member>
