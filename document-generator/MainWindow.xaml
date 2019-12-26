@@ -9,6 +9,10 @@
     <Window.CommandBindings>
         <CommandBinding Command="basic:MyCommands.New" Executed="NewCommand_Executed"></CommandBinding>
         <CommandBinding Command="basic:MyCommands.Open" Executed="OpenCommand_Executed"></CommandBinding>
+        <CommandBinding Command="basic:MyCommands.RecentOpen" Executed="RecentOpenCommand_Executed"></CommandBinding>
+        <CommandBinding Command="basic:MyCommands.Save" Executed="SaveCommand_Executed"></CommandBinding>
+        <CommandBinding Command="basic:MyCommands.SaveAs" Executed="SaveAsCommand_Executed"></CommandBinding>
+        <CommandBinding Command="basic:MyCommands.Exit" Executed="ExitCommand_Executed"></CommandBinding>
     </Window.CommandBindings>
     
     <Grid ShowGridLines="True">

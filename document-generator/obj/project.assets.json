@@ -15,7 +15,7 @@
           "bin/placeholder/BasicControlLibrary.dll": {}
         },
         "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WPF"
+          "Microsoft.WindowsDesktop.App"
         ]
       },
       "XMLHandle/1.0.0": {
@@ -105,7 +105,7 @@
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           },
-          "Microsoft.WindowsDesktop.App.WPF": {
+          "Microsoft.WindowsDesktop.App": {
             "privateAssets": "none"
           }
         },

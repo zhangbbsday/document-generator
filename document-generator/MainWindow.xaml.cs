@@ -1,19 +1,8 @@
 ﻿using Microsoft.Win32;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using XMLHandle;
+using Forms = System.Windows.Forms;
 
 namespace document_generator
 {
@@ -34,7 +23,7 @@ namespace document_generator
 
         private void OpenCommand_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            bool isMain = false;
+            bool isMain = true;
 
             OpenFileDialog openFileDialog = new OpenFileDialog
             {
@@ -53,11 +42,6 @@ namespace document_generator
                         OpenDoc(file);
                         isMain = false;
                     }
-                    else if (file.EndsWith(".xmlmain") && file == openFileDialog.FileNames[^1])
-                    {
-                        OpenMain(file);
-                        isMain = true;
-                    }
                 }
 
                 if (!isMain)
@@ -67,17 +51,32 @@ namespace document_generator
             }
         }
 
-        private void OpenMain(string path)
-        {
-
-        }
-
         private void OpenDoc(string path)
         {
             XMLDocumentationHandle documentation = new XMLDocumentationHandle(XMLDefault.XMLMarksDefault);
             documentation.Open(path);
             documentation.Split(XMLDefault.XMLDefaultPath);
             MessageBox.Show("分割完成!");
+        }
+
+        private void SaveCommand_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            MessageBox.Show("保存!");
+        }
+
+        private void ExitCommand_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void SaveAsCommand_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            MessageBox.Show("另存为!");
+        }
+
+        private void RecentOpenCommand_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+
         }
     }
 }

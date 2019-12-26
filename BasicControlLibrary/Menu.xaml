@@ -11,10 +11,10 @@
         <MenuItem Header="文件">
             <MenuItem Header="新建" Command="local:MyCommands.New"></MenuItem>
             <MenuItem Header="打开" Command="local:MyCommands.Open"></MenuItem>
-            <MenuItem Header="最近打开的文件"></MenuItem>
-            <MenuItem Header="保存"></MenuItem>
-            <MenuItem Header="另存为"></MenuItem>
-            <MenuItem Header="退出"></MenuItem>
+            <MenuItem Header="最近打开的文件" Command="local:MyCommands.RecentOpen"></MenuItem>
+            <MenuItem Header="保存" Command="local:MyCommands.Save"></MenuItem>
+            <MenuItem Header="另存为" Command="local:MyCommands.SaveAs"></MenuItem>
+            <MenuItem Header="退出" Command="local:MyCommands.Exit"></MenuItem>
         </MenuItem>
         <MenuItem Header="编辑">
             <MenuItem Header="查找"></MenuItem>
