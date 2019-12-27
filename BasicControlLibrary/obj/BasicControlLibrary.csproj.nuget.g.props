@@ -12,4 +12,10 @@
   <PropertyGroup>
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
   </PropertyGroup>
+  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)microsoft.windows.sdk.contracts\10.0.18362.2005\build\Microsoft.Windows.SDK.Contracts.props" Condition="Exists('$(NuGetPackageRoot)microsoft.windows.sdk.contracts\10.0.18362.2005\build\Microsoft.Windows.SDK.Contracts.props')" />
+  </ImportGroup>
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgMicrosoft_Toolkit_Wpf_UI_Controls_WebView Condition=" '$(PkgMicrosoft_Toolkit_Wpf_UI_Controls_WebView)' == '' ">C:\Users\火提昂\.nuget\packages\microsoft.toolkit.wpf.ui.controls.webview\6.0.0</PkgMicrosoft_Toolkit_Wpf_UI_Controls_WebView>
+  </PropertyGroup>
 </Project>

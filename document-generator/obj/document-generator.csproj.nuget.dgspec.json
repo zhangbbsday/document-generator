@@ -44,7 +44,14 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.Toolkit.Wpf.UI.Controls.WebView": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
           "imports": [
+            "uap10.0.18362",
             "net461",
             "net462",
             "net47",
@@ -59,6 +66,9 @@
               "privateAssets": "all"
             },
             "Microsoft.WindowsDesktop.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.WindowsDesktop.App.WPF": {
               "privateAssets": "none"
             }
           },
@@ -121,6 +131,9 @@
               "privateAssets": "all"
             },
             "Microsoft.WindowsDesktop.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.WindowsDesktop.App.WPF": {
               "privateAssets": "none"
             }
           },

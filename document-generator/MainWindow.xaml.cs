@@ -2,6 +2,7 @@
 using System.Windows;
 using System.Windows.Input;
 using XMLHandle;
+using System.IO;
 using Forms = System.Windows.Forms;
 
 namespace document_generator
@@ -77,6 +78,22 @@ namespace document_generator
         private void RecentOpenCommand_Executed(object sender, ExecutedRoutedEventArgs e)
         {
 
+        }
+
+        private void Window_Initialized(object sender, System.EventArgs e)
+        {
+            foreach (string str in Default.DirectoryDefault)
+            {
+                CreateDirectory(Default.DataPathDefault + str);
+            }
+        }
+
+        private void CreateDirectory(string path)
+        {
+            if (Directory.Exists(path))
+                return;
+
+            Directory.CreateDirectory(path);
         }
     }
 }

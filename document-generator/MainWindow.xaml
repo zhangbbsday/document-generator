@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:basic="clr-namespace:BasicControlLibrary;assembly=BasicControlLibrary"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Initialized="Window_Initialized">
     <Window.CommandBindings>
         <CommandBinding Command="basic:MyCommands.New" Executed="NewCommand_Executed"></CommandBinding>
         <CommandBinding Command="basic:MyCommands.Open" Executed="OpenCommand_Executed"></CommandBinding>
@@ -30,6 +30,7 @@
         <basic:Menu x:Name="menu" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Top"></basic:Menu>
         <basic:DocumentList x:Name="documentList" Grid.Row="1" Grid.Column="0"></basic:DocumentList>
         <basic:DocumentContent x:Name ="documentContent" Grid.Row="1" Grid.Column="1"></basic:DocumentContent>
+        <basic:DocumentWebView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"></basic:DocumentWebView>
         <basic:BottomEdge x:Name="buttomEdge" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Height="20"></basic:BottomEdge>
     </Grid>
 </Window>

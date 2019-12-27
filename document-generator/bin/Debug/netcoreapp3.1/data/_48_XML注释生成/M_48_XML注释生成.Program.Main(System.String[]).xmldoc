@@ -1,7 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<member name="M:_48_XML注释生成.Program.Main(System.String[])">
-  <summary>
-            程序入口
-            </summary>
-  <param name="args">命令</param>
-</member>

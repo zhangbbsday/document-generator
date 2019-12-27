@@ -21,3 +21,4 @@ D:\data\WPF\document-generator\document-generator\bin\Debug\netcoreapp3.1\XMLHan
 D:\data\WPF\document-generator\document-generator\bin\Debug\netcoreapp3.1\XMLHandle.pdb
 D:\data\WPF\document-generator\document-generator\obj\Debug\netcoreapp3.1\document-generator_MarkupCompile.lref
 D:\data\WPF\document-generator\document-generator\obj\Debug\netcoreapp3.1\App.baml
+D:\data\WPF\document-generator\document-generator\bin\Debug\netcoreapp3.1\Microsoft.Toolkit.Wpf.UI.Controls.WebView.dll
