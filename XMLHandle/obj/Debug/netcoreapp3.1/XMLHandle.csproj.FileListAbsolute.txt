@@ -1,8 +1,0 @@
-D:\data\WPF\document-generator\XMLHandle\bin\Debug\netcoreapp3.1\XMLHandle.deps.json
-D:\data\WPF\document-generator\XMLHandle\bin\Debug\netcoreapp3.1\XMLHandle.dll
-D:\data\WPF\document-generator\XMLHandle\bin\Debug\netcoreapp3.1\XMLHandle.pdb
-D:\data\WPF\document-generator\XMLHandle\obj\Debug\netcoreapp3.1\XMLHandle.AssemblyInfoInputs.cache
-D:\data\WPF\document-generator\XMLHandle\obj\Debug\netcoreapp3.1\XMLHandle.AssemblyInfo.cs
-D:\data\WPF\document-generator\XMLHandle\obj\Debug\netcoreapp3.1\XMLHandle.dll
-D:\data\WPF\document-generator\XMLHandle\obj\Debug\netcoreapp3.1\XMLHandle.pdb
-D:\data\WPF\document-generator\XMLHandle\obj\Debug\netcoreapp3.1\XMLHandle.csprojAssemblyReference.cache

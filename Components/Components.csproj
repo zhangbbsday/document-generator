@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EditToolLibrary\EditToolLibrary.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PropertyPageSchema Remove="Content.xaml" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,49 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "XMLToDocument/1.0.0": {
+        "dependencies": {
+          "Components": "1.0.0"
+        },
+        "runtime": {
+          "XMLToDocument.dll": {}
+        }
+      },
+      "Components/1.0.0": {
+        "dependencies": {
+          "EditToolLibrary": "1.0.0"
+        },
+        "runtime": {
+          "Components.dll": {}
+        }
+      },
+      "EditToolLibrary/1.0.0": {
+        "runtime": {
+          "EditToolLibrary.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "XMLToDocument/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Components/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "EditToolLibrary/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
