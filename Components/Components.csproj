@@ -9,8 +9,4 @@
     <ProjectReference Include="..\EditToolLibrary\EditToolLibrary.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <PropertyPageSchema Remove="Content.xaml" />
-  </ItemGroup>
-
 </Project>

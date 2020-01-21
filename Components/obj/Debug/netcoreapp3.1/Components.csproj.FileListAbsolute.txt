@@ -25,12 +25,10 @@ D:\data\WPF\document-generator\Components\bin\Debug\netcoreapp3.1\EditToolLibrar
 D:\data\WPF\document-generator\Components\bin\Debug\netcoreapp3.1\EditToolLibrary.pdb
 D:\data\WPF\document-generator\Components\obj\Debug\netcoreapp3.1\Components.csprojAssemblyReference.cache
 D:\data\WPF\document-generator\Components\obj\Debug\netcoreapp3.1\BottomBar.g.cs
-D:\data\WPF\document-generator\Components\obj\Debug\netcoreapp3.1\Content.g.cs
 D:\data\WPF\document-generator\Components\obj\Debug\netcoreapp3.1\TopMenu.g.cs
 D:\data\WPF\document-generator\Components\obj\Debug\netcoreapp3.1\Components_MarkupCompile.cache
 D:\data\WPF\document-generator\Components\obj\Debug\netcoreapp3.1\Components_MarkupCompile.lref
 D:\data\WPF\document-generator\Components\obj\Debug\netcoreapp3.1\BottomBar.baml
-D:\data\WPF\document-generator\Components\obj\Debug\netcoreapp3.1\Content.baml
 D:\data\WPF\document-generator\Components\obj\Debug\netcoreapp3.1\TopMenu.baml
 D:\data\WPF\document-generator\Components\obj\Debug\netcoreapp3.1\Components.g.resources
 D:\data\WPF\document-generator\Components\obj\Debug\netcoreapp3.1\Components.AssemblyInfoInputs.cache
@@ -38,3 +36,7 @@ D:\data\WPF\document-generator\Components\obj\Debug\netcoreapp3.1\Components.Ass
 D:\data\WPF\document-generator\Components\obj\Debug\netcoreapp3.1\Components.csproj.CopyComplete
 D:\data\WPF\document-generator\Components\obj\Debug\netcoreapp3.1\Components.dll
 D:\data\WPF\document-generator\Components\obj\Debug\netcoreapp3.1\Components.pdb
+D:\data\WPF\document-generator\Components\obj\Debug\netcoreapp3.1\MemberContent.g.cs
+D:\data\WPF\document-generator\Components\obj\Debug\netcoreapp3.1\MemberContent.baml
+D:\data\WPF\document-generator\Components\obj\Debug\netcoreapp3.1\XMLContent.g.cs
+D:\data\WPF\document-generator\Components\obj\Debug\netcoreapp3.1\XMLContent.baml

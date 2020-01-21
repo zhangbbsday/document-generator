@@ -29,7 +29,8 @@
         </Grid.ColumnDefinitions>
 
         <components:TopMenu x:Name="topMenu" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Background="AliceBlue"></components:TopMenu>
-        <components:Content x:Name="content" Grid.Row="1" Grid.Column="1" Background="Red"></components:Content>
+        <components:XMLContent x:Name="xmlContent" Grid.Row="1" Grid.Column="0" Background="Blue"></components:XMLContent>
+        <components:MemberContent x:Name="memberContent" Grid.Row="1" Grid.Column="1" Background="Red"></components:MemberContent>
         <components:BottomBar x:Name="buttonBar" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Background="Gainsboro"></components:BottomBar>
     </Grid>
 </Window>

@@ -5,10 +5,13 @@
     <Compile Update="BottomBar.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Content.xaml.cs">
+    <Compile Update="MemberContent.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="TopMenu.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="XMLContent.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -16,10 +19,13 @@
     <Page Update="BottomBar.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Content.xaml">
+    <Page Update="MemberContent.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="TopMenu.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="XMLContent.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

@@ -39,7 +39,7 @@ namespace EditToolLibrary
             [XMLNavigationMarks.Method] = "method"
         };
         public static string FileTypeDefault { get; } = ".dal";
-        public static string FileTypeFilterDefault { get; } = "文档列表|*.dal";
+        public static string FileTypeFilterDefault { get; } = "文档列表|*.dal|XML文档|*.xml";
 
     }
 }

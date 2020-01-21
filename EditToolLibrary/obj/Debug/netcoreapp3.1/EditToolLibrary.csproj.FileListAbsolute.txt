@@ -6,3 +6,11 @@ D:\data\WPF\XMLToDocument\EditToolLibrary\obj\Debug\netcoreapp3.1\EditToolLibrar
 D:\data\WPF\XMLToDocument\EditToolLibrary\obj\Debug\netcoreapp3.1\EditToolLibrary.AssemblyInfo.cs
 D:\data\WPF\XMLToDocument\EditToolLibrary\obj\Debug\netcoreapp3.1\EditToolLibrary.dll
 D:\data\WPF\XMLToDocument\EditToolLibrary\obj\Debug\netcoreapp3.1\EditToolLibrary.pdb
+D:\data\WPF\document-generator\EditToolLibrary\bin\Debug\netcoreapp3.1\EditToolLibrary.deps.json
+D:\data\WPF\document-generator\EditToolLibrary\bin\Debug\netcoreapp3.1\EditToolLibrary.dll
+D:\data\WPF\document-generator\EditToolLibrary\bin\Debug\netcoreapp3.1\EditToolLibrary.pdb
+D:\data\WPF\document-generator\EditToolLibrary\obj\Debug\netcoreapp3.1\EditToolLibrary.csprojAssemblyReference.cache
+D:\data\WPF\document-generator\EditToolLibrary\obj\Debug\netcoreapp3.1\EditToolLibrary.AssemblyInfoInputs.cache
+D:\data\WPF\document-generator\EditToolLibrary\obj\Debug\netcoreapp3.1\EditToolLibrary.AssemblyInfo.cs
+D:\data\WPF\document-generator\EditToolLibrary\obj\Debug\netcoreapp3.1\EditToolLibrary.dll
+D:\data\WPF\document-generator\EditToolLibrary\obj\Debug\netcoreapp3.1\EditToolLibrary.pdb

@@ -31,7 +31,7 @@ namespace XMLToDocument
             try
             {
                 string name = Tools.SaveFile(("保存文件", DefaultSetting.FileTypeDefault, DefaultSetting.FileTypeFilterDefault));
-                content.Load(name);
+                memberContent.Load(name);
             }
             catch (Exception)
             {
@@ -44,7 +44,7 @@ namespace XMLToDocument
             try
             {
                 string name = Tools.OpenFile(("打开文件", DefaultSetting.FileTypeDefault, DefaultSetting.FileTypeFilterDefault));
-                content.Load(name);
+                memberContent.Load(name);
             }
             catch (Exception)
             {
@@ -54,7 +54,7 @@ namespace XMLToDocument
 
         private void SaveCommand_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            content.Save();
+            memberContent.Save();
         }
 
         private void SaveAsCommand_Executed(object sender, ExecutedRoutedEventArgs e)
@@ -62,7 +62,7 @@ namespace XMLToDocument
             try
             {
                 string name = Tools.SaveFile(("保存文件", DefaultSetting.FileTypeDefault, DefaultSetting.FileTypeFilterDefault));
-                content.SaveAs(name);
+                memberContent.SaveAs(name);
             }
             catch (Exception)
             {

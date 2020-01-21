@@ -18,10 +18,10 @@ namespace Components
     /// <summary>
     /// Content.xaml 的交互逻辑
     /// </summary>
-    public partial class Content : UserControl
+    public partial class MemberContent : UserControl
     {
         private string FileLoad { get; set; }
-        public Content()
+        public MemberContent()
         {
             InitializeComponent();
         }
@@ -65,7 +65,7 @@ namespace Components
                 list.Add(reader.ReadString());
             }
 
-            contentList.ItemsSource = list;
+            memberContentList.ItemsSource = list;
         }
 
         private void SaveListItems(string path)
@@ -73,7 +73,7 @@ namespace Components
             using FileStream fileStream = new FileStream(path, FileMode.Open, FileAccess.Write);
             using BinaryWriter writer = new BinaryWriter(fileStream);
 
-            foreach (var item in contentList.ItemsSource)
+            foreach (var item in memberContentList.ItemsSource)
             {
                 writer.Write(item.ToString());
             }
