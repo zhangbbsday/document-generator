@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace XMLToDocument
+namespace Components
 {
-    public static class Tools
+    public class FileBoxExtension
     {
-        public static string OpenFile((string title ,string defaultExt, string filter) info)
+        public static string OpenFile((string title, string defaultExt, string filter) info)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog
             {

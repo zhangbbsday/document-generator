@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Components;
 using EditToolLibrary;
 
 namespace XMLToDocument
@@ -30,12 +31,12 @@ namespace XMLToDocument
         {
             try
             {
-                string name = Tools.SaveFile(("保存文件", DefaultSetting.FileTypeDefault, DefaultSetting.FileTypeFilterDefault));
+                string name = FileBoxExtension.SaveFile(("保存文件", DefaultSetting.FileTypeDefault, DefaultSetting.FileTypeFilterDefault));
                 memberContent.Load(name);
             }
             catch (Exception)
             {
-                MessageBox.Show("错误!", "出错!", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBoxExtension.ErroBox("出错!");
             }
         }
 
@@ -43,12 +44,15 @@ namespace XMLToDocument
         {
             try
             {
-                string name = Tools.OpenFile(("打开文件", DefaultSetting.FileTypeDefault, DefaultSetting.FileTypeFilterDefault));
-                memberContent.Load(name);
+                string name = FileBoxExtension.OpenFile(("打开文件", DefaultSetting.FileTypeDefault, DefaultSetting.FileTypeFilterDefault));
+                if (name.EndsWith(".dal"))
+                    memberContent.Load(name);
+                else
+                    xmlContent.Load(name);
             }
             catch (Exception)
             {
-                MessageBox.Show("错误!", "出错!", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBoxExtension.ErroBox("出错!");
             }
         }
 
@@ -61,18 +65,18 @@ namespace XMLToDocument
         {
             try
             {
-                string name = Tools.SaveFile(("保存文件", DefaultSetting.FileTypeDefault, DefaultSetting.FileTypeFilterDefault));
+                string name = FileBoxExtension.SaveFile(("保存文件", DefaultSetting.FileTypeDefault, DefaultSetting.FileTypeFilterDefault));
                 memberContent.SaveAs(name);
             }
             catch (Exception)
             {
-                MessageBox.Show("错误!", "出错!", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBoxExtension.ErroBox("出错!");
             }
         }
 
         private void OutputCommand_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            MessageBox.Show(e.OriginalSource.ToString());
+
         }
 
         private void ExitCommand_Executed(object sender, ExecutedRoutedEventArgs e)
