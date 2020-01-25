@@ -24,8 +24,8 @@
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
         <components:TopMenu x:Name="topMenu" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Background="AliceBlue"></components:TopMenu>

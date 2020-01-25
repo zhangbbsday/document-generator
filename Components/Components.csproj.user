@@ -2,30 +2,30 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
-    <Compile Update="BottomBar.xaml.cs">
+    <Compile Update="Views\BottomBar.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="MemberContent.xaml.cs">
+    <Compile Update="Views\MemberContent.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="TopMenu.xaml.cs">
+    <Compile Update="Views\TopMenu.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="XMLContent.xaml.cs">
+    <Compile Update="Views\XMLContent.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="BottomBar.xaml">
+    <Page Update="Views\BottomBar.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="MemberContent.xaml">
+    <Page Update="Views\MemberContent.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="TopMenu.xaml">
+    <Page Update="Views\TopMenu.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="XMLContent.xaml">
+    <Page Update="Views\XMLContent.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

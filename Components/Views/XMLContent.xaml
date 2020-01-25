@@ -13,9 +13,18 @@
         </Grid.RowDefinitions>
         
         <Label Grid.Row="0" HorizontalAlignment="Center">此处显示已加载的 XML 文件</Label>
-        <Border Margin="5" Grid.Row="1">
-            <ListBox x:Name="xmlContentList">
-            </ListBox>
-        </Border>
+
+        <ListView Margin="5" Grid.Row="1" Name="xmlContentList">
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Path=Name}"/>
+                        <GridViewColumn Header="Path" DisplayMemberBinding="{Binding Path=Path}"/>
+                        <GridViewColumn Header="MemberCount" DisplayMemberBinding="{Binding Path=MemberCount}"/>
+                        <GridViewColumn Header="State" DisplayMemberBinding="{Binding Path=FileState}"/>
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </UserControl>

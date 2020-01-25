@@ -37,7 +37,7 @@ namespace Components
 
         private void LoadXMLFile(string path)
         {
-            XMLFileContainer file = new XMLFileContainer(XDocument.Load(path));
+            XMLFileContainer file = new XMLFileContainer(path);
             if (!xmlFiles.ContainsKey(path))
             {
                 xmlContentList.Items.Add(file);

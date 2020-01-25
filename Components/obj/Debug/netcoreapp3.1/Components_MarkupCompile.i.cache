@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
 
-4-1377270259
+41436890322
 
-9-291944595
+9521221522
 193-1390498360
-BottomBar.xaml;MemberContent.xaml;TopMenu.xaml;XMLContent.xaml;
+Views\BottomBar.xaml;Views\MemberContent.xaml;Views\TopMenu.xaml;Views\XMLContent.xaml;
 
 False
 

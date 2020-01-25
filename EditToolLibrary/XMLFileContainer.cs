@@ -20,9 +20,13 @@ namespace EditToolLibrary
         public State FileState { get; set; }
         private XDocument File { get; }
 
-        public XMLFileContainer(XDocument document)
+        public XMLFileContainer(string path)
         {
-            File = document;
+            File = XDocument.Load(path);
+
+            Name = path.GetFileName();
+            Path = path;
+            MemberCount = 0;
             FileState = State.Loading;
         }
     }
