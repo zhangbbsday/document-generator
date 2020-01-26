@@ -69,5 +69,15 @@ namespace Components
                     new KeyGesture(Key.F4, ModifierKeys.Alt)
                 }
             );
+        public static readonly RoutedUICommand Delete = new RoutedUICommand
+            (
+                "删除",
+                "Delete",
+                typeof(Commands),
+                new InputGestureCollection
+                {
+                    new KeyGesture(Key.Delete)
+                }
+            );
     }
 }

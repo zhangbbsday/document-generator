@@ -18,13 +18,7 @@
                 <MenuItem Header="退出" Command="local:Commands.Exit"></MenuItem>
             </MenuItem>
             <MenuItem Header="编辑">
-                <MenuItem Header="查找"></MenuItem>
-                <MenuItem Header="撤回"></MenuItem>
-                <MenuItem Header="剪切"></MenuItem>
-                <MenuItem Header="复制"></MenuItem>
-                <MenuItem Header="粘贴"></MenuItem>
-                <MenuItem Header="删除"></MenuItem>
-                <MenuItem Header="全选"></MenuItem>
+                <MenuItem Header="删除" Command="local:Commands.Delete"></MenuItem>
             </MenuItem>
             <MenuItem Header="生成">
                 <MenuItem Header="分割"></MenuItem>

@@ -83,5 +83,17 @@ namespace XMLToDocument
         {
             Application.Current.Shutdown();
         }
+
+        private void DeleteCommand_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            try
+            {
+                xmlContent.Delete();
+            }
+            catch (Exception)
+            {
+                MessageBoxExtension.ErroBox("出错!");
+            }
+        }
     }
 }

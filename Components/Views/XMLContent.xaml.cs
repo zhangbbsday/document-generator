@@ -12,6 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using EditToolLibrary;
+using System.Collections.ObjectModel;
 
 namespace Components
 {
@@ -32,7 +33,24 @@ namespace Components
                 return;
 
             LoadXMLFile(path);
-            MessageBoxExtension.NomalBox("加载 XML 文件成功!");
+        }
+
+        public void Delete()
+        {
+            if (xmlContentList.SelectedItems == null)
+                return;
+
+            List<XMLFileContainer> selects = new List<XMLFileContainer>();
+            foreach (XMLFileContainer select in xmlContentList.SelectedItems)
+            {
+                xmlFiles.Remove(select.Path);
+                selects.Add(select);
+            }
+
+            foreach (XMLFileContainer select in selects)
+            {
+                xmlContentList.Items.Remove(select);
+            }
         }
 
         private void LoadXMLFile(string path)
