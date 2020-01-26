@@ -6,28 +6,29 @@ using System.Text;
 
 namespace Components
 {
-    public class FileBoxExtension
+    public class FileExtension
     {
-        public static string OpenFile((string title, string defaultExt, string filter) info)
+        public static string[] OpenFiles(string title, string defaultExt, string filter)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog
             {
-                Title = info.title,
-                DefaultExt = info.defaultExt,
-                Filter = info.filter,
+                Title = title,
+                DefaultExt = defaultExt,
+                Filter = filter,
+                Multiselect = true
             };
 
             openFileDialog.ShowDialog();
-            return openFileDialog.FileName;
+            return openFileDialog.FileNames;
         }
 
-        public static string SaveFile((string title, string defaultExt, string filter) info)
+        public static string SaveFile(string title, string defaultExt, string filter)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog
             {
-                Title = info.title,
-                DefaultExt = info.defaultExt,
-                Filter = info.filter,
+                Title = title,
+                DefaultExt = defaultExt,
+                Filter = filter,
             };
 
             if (saveFileDialog.ShowDialog() ?? false)

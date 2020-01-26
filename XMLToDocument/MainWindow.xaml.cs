@@ -31,7 +31,7 @@ namespace XMLToDocument
         {
             try
             {
-                string name = FileBoxExtension.SaveFile(("保存文件", DefaultSetting.FileTypeDefault, DefaultSetting.FileTypeFilterDefault));
+                string name = FileExtension.SaveFile("保存文件", DefaultSetting.FileTypeDefault, DefaultSetting.FileTypeFilterDefault);
                 memberContent.Load(name);
             }
             catch (Exception)
@@ -44,11 +44,17 @@ namespace XMLToDocument
         {
             try
             {
-                string name = FileBoxExtension.OpenFile(("打开文件", DefaultSetting.FileTypeDefault, DefaultSetting.FileTypeFilterDefault));
-                if (name.EndsWith(".dal"))
-                    memberContent.Load(name);
+                string[] names = FileExtension.OpenFiles("打开文件", DefaultSetting.FileTypeDefault, DefaultSetting.FileTypeFilterDefault);
+
+                if (names[0].EndsWith(".dal"))
+                    memberContent.Load(names[^1]);
                 else
-                    xmlContent.Load(name);
+                {
+                    foreach (string path in names)
+                    {
+                        xmlContent.Load(path);
+                    }
+                }
             }
             catch (Exception)
             {
@@ -65,7 +71,7 @@ namespace XMLToDocument
         {
             try
             {
-                string name = FileBoxExtension.SaveFile(("保存文件", DefaultSetting.FileTypeDefault, DefaultSetting.FileTypeFilterDefault));
+                string name = FileExtension.SaveFile("保存文件", DefaultSetting.FileTypeDefault, DefaultSetting.FileTypeFilterDefault);
                 memberContent.SaveAs(name);
             }
             catch (Exception)
