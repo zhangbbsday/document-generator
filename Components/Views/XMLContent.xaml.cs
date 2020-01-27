@@ -53,6 +53,14 @@ namespace Components
             }
         }
 
+        public void Produce()
+        {
+            if (xmlContentList.Items == null)
+                return;
+
+            XMLHandle.Produce(xmlContentList.Items);
+        }
+
         private void LoadXMLFile(string path)
         {
             XMLFileContainer file = new XMLFileContainer(path);

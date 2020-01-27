@@ -34,9 +34,9 @@ namespace XMLToDocument
                 string name = FileExtension.SaveFile("保存文件", DefaultSetting.FileTypeDefault, DefaultSetting.FileTypeFilterDefault);
                 memberContent.Load(name);
             }
-            catch (Exception)
+            catch (Exception exception)
             {
-                MessageBoxExtension.ErroBox("出错!");
+                MessageBoxExtension.ErroBox(exception.Message);
             }
         }
 
@@ -56,9 +56,9 @@ namespace XMLToDocument
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception exception)
             {
-                MessageBoxExtension.ErroBox("出错!");
+                MessageBoxExtension.ErroBox(exception.Message);
             }
         }
 
@@ -74,9 +74,9 @@ namespace XMLToDocument
                 string name = FileExtension.SaveFile("保存文件", DefaultSetting.FileTypeDefault, DefaultSetting.FileTypeFilterDefault);
                 memberContent.SaveAs(name);
             }
-            catch (Exception)
+            catch (Exception exception)
             {
-                MessageBoxExtension.ErroBox("出错!");
+                MessageBoxExtension.ErroBox(exception.Message);
             }
         }
 
@@ -96,9 +96,9 @@ namespace XMLToDocument
             {
                 xmlContent.Delete();
             }
-            catch (Exception)
+            catch (Exception exception)
             {
-                MessageBoxExtension.ErroBox("出错!");
+                MessageBoxExtension.ErroBox(exception.Message);
             }
         }
 
@@ -108,9 +108,9 @@ namespace XMLToDocument
             {
 
             }
-            catch (Exception)
+            catch (Exception exception)
             {
-
+                MessageBoxExtension.ErroBox(exception.Message);
             }
         }
 
@@ -120,9 +120,9 @@ namespace XMLToDocument
             {
 
             }
-            catch (Exception)
+            catch (Exception exception)
             {
-
+                MessageBoxExtension.ErroBox(exception.Message);
             }
         }
     }

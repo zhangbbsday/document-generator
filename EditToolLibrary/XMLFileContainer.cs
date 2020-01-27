@@ -18,7 +18,7 @@ namespace EditToolLibrary
         public string Path { get; }
         public int MemberCount { get; }
         public State FileState { get; set; }
-        private XDocument File { get; }
+        public XDocument File { get; }
 
         public XMLFileContainer(string path)
         {

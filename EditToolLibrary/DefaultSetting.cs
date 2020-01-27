@@ -40,6 +40,8 @@ namespace EditToolLibrary
         };
         public static string FileTypeDefault { get; } = ".dal";
         public static string FileTypeFilterDefault { get; } = "文档列表|*.dal|XML文档|*.xml";
-
+        public static string DalDefaultPath { get; } = System.IO.Directory.GetCurrentDirectory() + @"\data\dal\";
+        public static string HtmlDefaultPath { get; } = System.IO.Directory.GetCurrentDirectory() + @"\data\html\";
+        public static string StyleDefaultPath { get; } = System.IO.Directory.GetCurrentDirectory() + @"\data\style\";
     }
 }
