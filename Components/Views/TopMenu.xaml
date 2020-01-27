@@ -21,9 +21,8 @@
                 <MenuItem Header="删除" Command="local:Commands.Delete"></MenuItem>
             </MenuItem>
             <MenuItem Header="生成">
-                <MenuItem Header="分割"></MenuItem>
-                <MenuItem Header="生成"></MenuItem>
-                <MenuItem Header="预览"></MenuItem>
+                <MenuItem Header="生成" Command="local:Commands.Produce"></MenuItem>
+                <MenuItem Header="预览" Command="local:Commands.Preview"></MenuItem>
             </MenuItem>
             <MenuItem Header="设置">
                 <MenuItem Header="选项"></MenuItem>

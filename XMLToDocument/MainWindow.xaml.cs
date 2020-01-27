@@ -101,5 +101,29 @@ namespace XMLToDocument
                 MessageBoxExtension.ErroBox("出错!");
             }
         }
+
+        private void ProduceCommand_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            try
+            {
+
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void PreviewCommand_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            try
+            {
+
+            }
+            catch (Exception)
+            {
+
+            }
+        }
     }
 }

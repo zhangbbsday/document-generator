@@ -33,7 +33,6 @@ namespace Components
 
             FileLoad = path;
             LoadListItems();
-            MessageBox.Show("读取成功!");
         }
 
         public void Save()
@@ -42,7 +41,6 @@ namespace Components
                 return;
 
             SaveListItems(FileLoad);
-            MessageBox.Show("保存成功!");
         }
 
         public void SaveAs(string path)
@@ -52,7 +50,6 @@ namespace Components
 
             SaveListItems(path);
             FileLoad = path;
-            MessageBox.Show("保存成功!");
         }
 
         private void LoadListItems()
@@ -60,6 +57,7 @@ namespace Components
             using FileStream fileStream = new FileStream(FileLoad, FileMode.Open, FileAccess.Read);
             using BinaryReader reader = new BinaryReader(fileStream);
             ObservableCollection<string> list = new ObservableCollection<string>();
+
             while (fileStream.Position != fileStream.Length)
             {
                 list.Add(reader.ReadString());

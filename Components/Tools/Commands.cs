@@ -79,5 +79,25 @@ namespace Components
                     new KeyGesture(Key.Delete)
                 }
             );
+        public static readonly RoutedUICommand Produce = new RoutedUICommand
+            (
+                "生成",
+                "Produce",
+                typeof(Commands),
+                new InputGestureCollection
+                {
+                    new KeyGesture(Key.F4)
+                }
+            );
+        public static readonly RoutedUICommand Preview = new RoutedUICommand
+            (
+                "预览",
+                "Preview",
+                typeof(Commands),
+                new InputGestureCollection
+                {
+                    new KeyGesture(Key.F5)
+                }
+            );
     }
 }
