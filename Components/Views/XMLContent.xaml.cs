@@ -55,10 +55,11 @@ namespace Components
 
         public void Produce()
         {
-            if (xmlContentList.Items == null)
+            if (xmlContentList.Items.Count == 0)
                 return;
 
             XMLHandle.Produce(xmlContentList.Items);
+            MessageBoxExtension.NomalBox("成功!");
         }
 
         private void LoadXMLFile(string path)

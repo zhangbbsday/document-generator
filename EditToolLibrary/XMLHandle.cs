@@ -17,21 +17,22 @@ namespace EditToolLibrary
             }
         }
 
+        //需要优化
         private static void Split(XMLFileContainer file)
         {
             if (file.File == null)
                 throw new IOException("文件读取错误!");
 
             XDocument document = file.File;
-            var members = document.Descendants(DefaultSetting.XMLMarksDefault[XMLMarks.Member]);
+            var members = document.Descendants(DefaultSetting.XmlMarksDefault[XMLMarks.Member]);
             string nameSpace = document.Root
-                            .Element(DefaultSetting.XMLMarksDefault[XMLMarks.Assembly])
+                            .Element(DefaultSetting.XmlMarksDefault[XMLMarks.Assembly])
                             .Element("name").Value
                             .AddUnderline();
 
             XDocument mainDocument = CreateMainFile(nameSpace);
             XElement nameSpaceRoot = mainDocument.Root
-                                    .Element(DefaultSetting.XMLNavigationMarksDefault[XMLNavigationMarks.NameSpace]);
+                                    .Element(DefaultSetting.XmlNavigationMarksDefault[XMLNavigationMarks.NameSpace]);
             XElement xElement = nameSpaceRoot;
             foreach (var member in members)
             {
@@ -44,10 +45,11 @@ namespace EditToolLibrary
         private static XDocument CreateMainFile(string nameSpace)
         {
             return new XDocument(new XElement("Root",
-                new XElement(DefaultSetting.XMLNavigationMarksDefault[XMLNavigationMarks.NameSpace],
+                new XElement(DefaultSetting.XmlNavigationMarksDefault[XMLNavigationMarks.NameSpace],
                 new XAttribute("name", nameSpace))));
         }
 
+        //需要优化
         private static XElement AddMainElement(XElement root, XElement xElement, string memberName)
         {
             XElement add;
@@ -58,19 +60,19 @@ namespace EditToolLibrary
             switch (type)
             {
                 case 'T':
-                    add = new XElement(DefaultSetting.XMLNavigationMarksDefault[XMLNavigationMarks.Class],
+                    add = new XElement(DefaultSetting.XmlNavigationMarksDefault[XMLNavigationMarks.Class],
                         new XAttribute("name", memberName));
                     break;
                 case 'P':
-                    add = new XElement(DefaultSetting.XMLNavigationMarksDefault[XMLNavigationMarks.Property],
+                    add = new XElement(DefaultSetting.XmlNavigationMarksDefault[XMLNavigationMarks.Property],
                         new XAttribute("name", memberName));
                     break;
                 case 'F':
-                    add = new XElement(DefaultSetting.XMLNavigationMarksDefault[XMLNavigationMarks.Field],
+                    add = new XElement(DefaultSetting.XmlNavigationMarksDefault[XMLNavigationMarks.Field],
                         new XAttribute("name", memberName));
                     break;
                 case 'M':
-                    add = new XElement(DefaultSetting.XMLNavigationMarksDefault[XMLNavigationMarks.Method],
+                    add = new XElement(DefaultSetting.XmlNavigationMarksDefault[XMLNavigationMarks.Method],
                         new XAttribute("name", memberName));
                     break;
                 default:
@@ -85,12 +87,12 @@ namespace EditToolLibrary
                 xElement = xElement.Parent;
             }
 
-            if (type != 'T' && xElement.Name == DefaultSetting.XMLNavigationMarksDefault[XMLNavigationMarks.NameSpace])
+            if (type != 'T' && xElement.Name == DefaultSetting.XmlNavigationMarksDefault[XMLNavigationMarks.NameSpace])
             {
-                if (root.Element(DefaultSetting.XMLNavigationMarksDefault[XMLNavigationMarks.DefaultClass]) == null)
-                    root.Add(new XElement(DefaultSetting.XMLNavigationMarksDefault[XMLNavigationMarks.DefaultClass], new XAttribute("name", "Null")));
+                if (root.Element(DefaultSetting.XmlNavigationMarksDefault[XMLNavigationMarks.DefaultClass]) == null)
+                    root.Add(new XElement(DefaultSetting.XmlNavigationMarksDefault[XMLNavigationMarks.DefaultClass], new XAttribute("name", "Null")));
 
-                xElement = root.Element(DefaultSetting.XMLNavigationMarksDefault[XMLNavigationMarks.DefaultClass]);
+                xElement = root.Element(DefaultSetting.XmlNavigationMarksDefault[XMLNavigationMarks.DefaultClass]);
             }
 
             xElement.Add(add);

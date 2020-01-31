@@ -42,3 +42,5 @@ D:\data\WPF\document-generator\XMLToDocument\obj\Debug\netcoreapp3.1\XMLToDocume
 D:\data\WPF\document-generator\XMLToDocument\obj\Debug\netcoreapp3.1\XMLToDocument.csproj.CopyComplete
 D:\data\WPF\document-generator\XMLToDocument\obj\Debug\netcoreapp3.1\XMLToDocument.dll
 D:\data\WPF\document-generator\XMLToDocument\obj\Debug\netcoreapp3.1\XMLToDocument.pdb
+D:\data\WPF\document-generator\XMLToDocument\bin\Debug\netcoreapp3.1\data\style\test-style.css
+D:\data\WPF\document-generator\XMLToDocument\bin\Debug\netcoreapp3.1\data\style\member.xsl

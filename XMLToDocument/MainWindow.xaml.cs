@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -31,7 +33,7 @@ namespace XMLToDocument
         {
             try
             {
-                string name = FileExtension.SaveFile("保存文件", DefaultSetting.FileTypeDefault, DefaultSetting.FileTypeFilterDefault);
+                string name = FileExtension.SaveFile("保存文件", DefaultSetting.SaveFileTypeDefault, DefaultSetting.FileTypeFilterDefault);
                 memberContent.Load(name);
             }
             catch (Exception exception)
@@ -44,7 +46,7 @@ namespace XMLToDocument
         {
             try
             {
-                string[] names = FileExtension.OpenFiles("打开文件", DefaultSetting.FileTypeDefault, DefaultSetting.FileTypeFilterDefault);
+                string[] names = FileExtension.OpenFiles("打开文件", DefaultSetting.SaveFileTypeDefault, DefaultSetting.FileTypeFilterDefault);
 
                 if (names[0].EndsWith(".dal"))
                     memberContent.Load(names[^1]);
@@ -71,7 +73,7 @@ namespace XMLToDocument
         {
             try
             {
-                string name = FileExtension.SaveFile("保存文件", DefaultSetting.FileTypeDefault, DefaultSetting.FileTypeFilterDefault);
+                string name = FileExtension.SaveFile("保存文件", DefaultSetting.SaveFileTypeDefault, DefaultSetting.FileTypeFilterDefault);
                 memberContent.SaveAs(name);
             }
             catch (Exception exception)
@@ -106,7 +108,7 @@ namespace XMLToDocument
         {
             try
             {
-
+                xmlContent.Produce();
             }
             catch (Exception exception)
             {

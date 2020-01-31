@@ -10,4 +10,13 @@
     <ProjectReference Include="..\Components\Components.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="data\style\test-style.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="data\style\member.xsl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
