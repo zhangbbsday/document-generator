@@ -72,7 +72,7 @@ namespace Components
 
         public void Preview()
         {
-
+            System.Diagnostics.Process.Start("explorer.exe", DefaultSetting.HtmlDefaultPath + DefaultSetting.MainHtmlFileDefault);
         }
 
         private void LoadXmlFile(string path)
