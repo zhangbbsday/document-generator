@@ -38,11 +38,10 @@ namespace EditToolLibrary
             [XMLNavigationMarks.Property] = "property",
             [XMLNavigationMarks.Method] = "method"
         };
-        public static string SaveFileTypeDefault { get; } = ".dal";
         public static string HtmlFileTypeDefault { get; } = ".html";
         public static string XmlFileTypeDefault { get; } = ".xml";
-        public static string FileTypeFilterDefault { get; } = "文档列表|*.dal|XML文档|*.xml";
-        public static string DalDefaultPath { get; } = System.IO.Directory.GetCurrentDirectory() + @"\data\dal\";
+        public static string OpenFileTypeFilterDefault { get; } = "XML文档|*.xml";
+        public static string SaveFileTypeFilterDefault { get; } = "zip文件|*.zip";
         public static string HtmlDefaultPath { get; } = System.IO.Directory.GetCurrentDirectory() + @"\data\html\";
         public static string StyleDefaultPath { get; } = System.IO.Directory.GetCurrentDirectory() + @"\data\style\";
         public static string MemberXslFileDefault { get; } = "member.xsl";

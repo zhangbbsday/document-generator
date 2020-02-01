@@ -8,11 +8,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Window.CommandBindings>
-        <CommandBinding Command="components:Commands.New" Executed="NewCommand_Executed"/>
         <CommandBinding Command="components:Commands.Open" Executed="OpenCommand_Executed"/>
-        <CommandBinding Command="components:Commands.Save" Executed="SaveCommand_Executed"/>
         <CommandBinding Command="components:Commands.SaveAs" Executed="SaveAsCommand_Executed"/>
-        <CommandBinding Command="components:Commands.Output" Executed="OutputCommand_Executed"/>
         <CommandBinding Command="components:Commands.Exit" Executed="ExitCommand_Executed"/>
         <CommandBinding Command="components:Commands.Delete" Executed="DeleteCommand_Executed"/>
         <CommandBinding Command="components:Commands.Produce" Executed="ProduceCommand_Executed"/>
@@ -26,14 +23,8 @@
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-
-        <components:TopMenu x:Name="topMenu" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Background="AliceBlue"></components:TopMenu>
-        <components:XMLContent x:Name="xmlContent" Grid.Row="1" Grid.Column="0" Background="Blue"></components:XMLContent>
-        <components:MemberContent x:Name="memberContent" Grid.Row="1" Grid.Column="1" Background="Red"></components:MemberContent>
-        <components:BottomBar x:Name="buttonBar" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Background="Gainsboro"></components:BottomBar>
+        <components:TopMenu x:Name="topMenu" Grid.Row="0" Background="AliceBlue"></components:TopMenu>
+        <components:XMLContent x:Name="xmlContent" Grid.Row="1" Background="Blue"></components:XMLContent>
+        <components:BottomBar x:Name="buttonBar" Grid.Row="2" Background="Gainsboro"></components:BottomBar>
     </Grid>
 </Window>

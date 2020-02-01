@@ -5,9 +5,6 @@
     <Compile Update="Views\BottomBar.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\MemberContent.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="Views\TopMenu.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -17,9 +14,6 @@
   </ItemGroup>
   <ItemGroup>
     <Page Update="Views\BottomBar.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Views\MemberContent.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\TopMenu.xaml">

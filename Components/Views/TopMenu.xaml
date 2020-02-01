@@ -9,12 +9,9 @@
     <DockPanel>
         <Menu>
             <MenuItem Header="文件">
-                <MenuItem Header="新建" Command="local:Commands.New"></MenuItem>
                 <MenuItem Header="打开" Command="local:Commands.Open"></MenuItem>
                 <MenuItem Header="最近打开的文件"></MenuItem>
-                <MenuItem Header="保存" Command="local:Commands.Save"></MenuItem>
                 <MenuItem Header="另存为" Command="local:Commands.SaveAs"></MenuItem>
-                <MenuItem Header="导出" Command="local:Commands.Output"></MenuItem>
                 <MenuItem Header="退出" Command="local:Commands.Exit"></MenuItem>
             </MenuItem>
             <MenuItem Header="编辑">

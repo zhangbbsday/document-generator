@@ -29,33 +29,15 @@ namespace XMLToDocument
             InitializeComponent();
         }
 
-        private void NewCommand_Executed(object sender, ExecutedRoutedEventArgs e)
-        {
-            try
-            {
-                string name = FileExtension.SaveFile("保存文件", DefaultSetting.SaveFileTypeDefault, DefaultSetting.FileTypeFilterDefault);
-                memberContent.Load(name);
-            }
-            catch (Exception exception)
-            {
-                MessageBoxExtension.ErroBox(exception.Message);
-            }
-        }
-
         private void OpenCommand_Executed(object sender, ExecutedRoutedEventArgs e)
         {
             try
             {
-                string[] names = FileExtension.OpenFiles("打开文件", DefaultSetting.SaveFileTypeDefault, DefaultSetting.FileTypeFilterDefault);
+                string[] names = FileExtension.OpenFiles("打开文件", DefaultSetting.OpenFileTypeFilterDefault);
 
-                if (names[0].EndsWith(".dal"))
-                    memberContent.Load(names[^1]);
-                else
+                foreach (string path in names)
                 {
-                    foreach (string path in names)
-                    {
-                        xmlContent.Load(path);
-                    }
+                    xmlContent.Load(path);
                 }
             }
             catch (Exception exception)
@@ -64,27 +46,17 @@ namespace XMLToDocument
             }
         }
 
-        private void SaveCommand_Executed(object sender, ExecutedRoutedEventArgs e)
-        {
-            memberContent.Save();
-        }
-
         private void SaveAsCommand_Executed(object sender, ExecutedRoutedEventArgs e)
         {
             try
             {
-                string name = FileExtension.SaveFile("保存文件", DefaultSetting.SaveFileTypeDefault, DefaultSetting.FileTypeFilterDefault);
-                memberContent.SaveAs(name);
+                string name = FileExtension.SaveFile("保存文件", DefaultSetting.SaveFileTypeFilterDefault);
+                xmlContent.Save(name);
             }
             catch (Exception exception)
             {
                 MessageBoxExtension.ErroBox(exception.Message);
             }
-        }
-
-        private void OutputCommand_Executed(object sender, ExecutedRoutedEventArgs e)
-        {
-
         }
 
         private void ExitCommand_Executed(object sender, ExecutedRoutedEventArgs e)
@@ -120,7 +92,7 @@ namespace XMLToDocument
         {
             try
             {
-
+                xmlContent.Preview();
             }
             catch (Exception exception)
             {

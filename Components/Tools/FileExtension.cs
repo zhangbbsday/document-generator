@@ -8,12 +8,11 @@ namespace Components
 {
     public class FileExtension
     {
-        public static string[] OpenFiles(string title, string defaultExt, string filter)
+        public static string[] OpenFiles(string title, string filter)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog
             {
                 Title = title,
-                DefaultExt = defaultExt,
                 Filter = filter,
                 Multiselect = true
             };
@@ -22,12 +21,11 @@ namespace Components
             return openFileDialog.FileNames;
         }
 
-        public static string SaveFile(string title, string defaultExt, string filter)
+        public static string SaveFile(string title, string filter)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog
             {
                 Title = title,
-                DefaultExt = defaultExt,
                 Filter = filter,
             };
 

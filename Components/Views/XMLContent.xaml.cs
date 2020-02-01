@@ -32,7 +32,15 @@ namespace Components
             if (string.IsNullOrEmpty(path))
                 return;
 
-            LoadXMLFile(path);
+            LoadXmlFile(path);
+        }
+
+        public void Save(string path)
+        {
+            if (string.IsNullOrEmpty(path))
+                return;
+
+            ZipFileHandle.SaveFile(path);
         }
 
         public void Delete()
@@ -62,7 +70,12 @@ namespace Components
             MessageBoxExtension.NomalBox("成功!");
         }
 
-        private void LoadXMLFile(string path)
+        public void Preview()
+        {
+
+        }
+
+        private void LoadXmlFile(string path)
         {
             XMLFileContainer file = new XMLFileContainer(path);
             if (!xmlFiles.ContainsKey(path))
