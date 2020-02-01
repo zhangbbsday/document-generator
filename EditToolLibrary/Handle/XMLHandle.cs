@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.IO;
 using System.Xml.Linq;
+using System.Linq;
 
 namespace EditToolLibrary
 {
@@ -11,18 +12,16 @@ namespace EditToolLibrary
     {
         public static void Produce(IList files)
         {
-            string path = DefaultSetting.HtmlDefaultPath;
-            if (Directory.Exists(path))
-                Directory.Delete(path, true);
-            Directory.CreateDirectory(path);
-
+            ClearDirectory();
+            XDocument main = CreateMainFile();
             foreach (XMLFileContainer file in files)
-            {
-                Split(file);
+            { 
+                Split(file, main);
             }
+            ChangeToHtml(main, HtmlHandle.FileType.MainFile);
         }
         //需要优化
-        private static void Split(XMLFileContainer file)
+        private static void Split(XMLFileContainer file, XDocument main)
         {
             if (file.File == null)
                 throw new IOException("文件读取错误!");
@@ -33,24 +32,29 @@ namespace EditToolLibrary
                             .Element(DefaultSetting.XmlMarksDefault[XMLMarks.Assembly])
                             .Element("name").Value
                             .AddUnderline();
+            AddNameSpace(main, nameSpace);
 
-            XDocument mainDocument = CreateMainFile(nameSpace);
-            XElement nameSpaceRoot = mainDocument.Root
-                                    .Element(DefaultSetting.XmlNavigationMarksDefault[XMLNavigationMarks.NameSpace]);
+            XElement nameSpaceRoot = main.Root
+                                 .Elements(DefaultSetting.XmlNavigationMarksDefault[XMLNavigationMarks.NameSpace])
+                                 .Last();
+
             XElement xElement = nameSpaceRoot;
             foreach (var member in members)
             {
                 xElement = AddMainElement(nameSpaceRoot, xElement, member.Attribute("name").Value);
                 ChangeToHtml(new XDocument(member));
             }
-            ChangeToHtml(mainDocument, HtmlHandle.FileType.MainFile);
         }
 
-        private static XDocument CreateMainFile(string nameSpace)
+        private static XDocument CreateMainFile()
         {
-            return new XDocument(new XElement("Root",
-                new XElement(DefaultSetting.XmlNavigationMarksDefault[XMLNavigationMarks.NameSpace],
-                new XAttribute("name", nameSpace))));
+            return new XDocument(new XElement("Root"));
+        }
+
+        private static void AddNameSpace(XDocument document, string nameSpace)
+        {
+            document.Root.Add(new XElement(DefaultSetting.XmlNavigationMarksDefault[XMLNavigationMarks.NameSpace],
+                        new XAttribute("name", nameSpace)));
         }
         //需要优化
         private static XElement AddMainElement(XElement root, XElement xElement, string memberName)
@@ -105,6 +109,14 @@ namespace EditToolLibrary
         private static void ChangeToHtml(XDocument xDocument, HtmlHandle.FileType fileType = HtmlHandle.FileType.MemberFile)
         {
             HtmlHandle.ChangeToHtml(xDocument, fileType);
+        }
+
+        private static void ClearDirectory()
+        {
+            string path = DefaultSetting.HtmlDefaultPath;
+            if (Directory.Exists(path))
+                Directory.Delete(path, true);
+            Directory.CreateDirectory(path);
         }
     }
 }

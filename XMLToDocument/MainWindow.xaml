@@ -16,15 +16,15 @@
         <CommandBinding Command="components:Commands.Preview" Executed="PreviewCommand_Executed"/>
     </Window.CommandBindings>
     
-    <Grid ShowGridLines="True">
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
 
-        <components:TopMenu x:Name="topMenu" Grid.Row="0" Background="AliceBlue"></components:TopMenu>
-        <components:XMLContent x:Name="xmlContent" Grid.Row="1" Background="Blue"></components:XMLContent>
-        <components:BottomBar x:Name="buttonBar" Grid.Row="2" Background="Gainsboro"></components:BottomBar>
+        <components:TopMenu x:Name="topMenu" Grid.Row="0"></components:TopMenu>
+        <components:XMLContent x:Name="xmlContent" Grid.Row="1"></components:XMLContent>
+        <components:BottomBar x:Name="buttonBar" Grid.Row="2" Background="AliceBlue"></components:BottomBar>
     </Grid>
 </Window>

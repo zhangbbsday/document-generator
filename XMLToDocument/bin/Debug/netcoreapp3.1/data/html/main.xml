@@ -1,5 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Root>
+  <namespace name="_80392y">
+    <class name="TTa.N121">
+      <property name="PTa.N121.Num" />
+      <method name="MTa.N121.#ctor(System.Int32)" />
+      <method name="MTa.N121.Set(System.Int32)" />
+    </class>
+    <class name="TTa.Program">
+      <method name="MTa.Program.Main(System.String[])" />
+    </class>
+  </namespace>
   <namespace name="_48_XML注释生成">
     <class name="T_48_XML注释生成.Math">
       <method name="M_48_XML注释生成.Math.Add(System.Int32,System.Int32)" />

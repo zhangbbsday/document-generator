@@ -7,14 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        
-        <Label Grid.Row="0" HorizontalAlignment="Center">此处显示已加载的 XML 文件</Label>
-
-        <ListView Margin="5" Grid.Row="1" Name="xmlContentList">
+        <ListView Margin="5" Name="xmlContentList">
             <ListView.View>
                 <GridView>
                     <GridView.Columns>
