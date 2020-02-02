@@ -47,11 +47,11 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
           }
 
           iframe{
-          height : 100%;
+          position:fixed;
+          height : 80%;
           }
 
           .navigation-bar{
-          background-color: white;
           overflow: hidden;
           float: left;
           width: 20%;
@@ -59,9 +59,6 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
           margin-top: 30px;
           margin-right: 30px;
           max-height: 800px;
-          border-color: black;
-          border-style: dashed;
-          border-width: 1px;
           }
 
           .doc{

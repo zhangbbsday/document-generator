@@ -21,6 +21,7 @@ namespace Components
     /// </summary>
     public partial class XMLContent : UserControl
     {
+        public bool IsProduced { get; private set; } = false;
         private Dictionary<string, XMLFileContainer> xmlFiles = new Dictionary<string, XMLFileContainer>();
         public XMLContent()
         {
@@ -66,12 +67,16 @@ namespace Components
             if (xmlContentList.Items.Count == 0)
                 return;
 
+            IsProduced = true;
             XMLHandle.Produce(xmlContentList.Items);
-            MessageBoxExtension.NomalBox("成功!");
+            MessageBoxExtension.NomalBox("生成成功!");
         }
 
         public void Preview()
         {
+            if (!IsProduced)
+                return;
+
             System.Diagnostics.Process.Start("explorer.exe", DefaultSetting.HtmlDefaultPath + DefaultSetting.MainHtmlFileDefault);
         }
 
@@ -83,8 +88,6 @@ namespace Components
                 xmlContentList.Items.Add(file);
                 xmlFiles[path] = file;
             }
-            else
-                MessageBoxExtension.WarningBox("已有重复内容!");
         }
     }
 }

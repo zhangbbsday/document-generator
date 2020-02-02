@@ -30,12 +30,12 @@ namespace EditToolLibrary
             }
         }
 
-        //待补充
         private static void ChangeMain(XDocument document, string path)
         {
             string pathNew = path + "navigation";
             path += "main";
-            document.Save(path + DefaultSetting.XmlFileTypeDefault);
+
+            SaveXml(document, path + DefaultSetting.XmlFileTypeDefault);
             Change(DefaultSetting.StyleDefaultPath + DefaultSetting.MainXslFileDefault,
                 path + DefaultSetting.XmlFileTypeDefault, path + DefaultSetting.HtmlFileTypeDefault);
             Change(DefaultSetting.StyleDefaultPath + DefaultSetting.NavigationXslFileDefault,
@@ -44,20 +44,23 @@ namespace EditToolLibrary
             File.Delete(path + DefaultSetting.XmlFileTypeDefault);
         }
 
-        //需要优化
         private static void ChangeMember(XDocument document, string path)
         {
             path += document.Element(DefaultSetting.XmlMarksDefault[XMLMarks.Member])
                             .Attribute("name").Value
                             .RemoveInvalidCharacter();
 
-            document.Save(path + DefaultSetting.XmlFileTypeDefault);
+            SaveXml(document, path + DefaultSetting.XmlFileTypeDefault);
             Change(DefaultSetting.StyleDefaultPath + DefaultSetting.MemberXslFileDefault,
                 path + DefaultSetting.XmlFileTypeDefault, path + DefaultSetting.HtmlFileTypeDefault);
 
             File.Delete(path + DefaultSetting.XmlFileTypeDefault);
         }
 
+        private static void SaveXml(XDocument document, string path)
+        {
+            document.Save(path);
+        }
         private static void Change(string xslPath, string xmlPath, string htmlPath)
         {
             XslCompiledTransform xslt = new XslCompiledTransform();

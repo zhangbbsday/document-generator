@@ -9,7 +9,7 @@
         Title="MainWindow" MaxHeight="450" MaxWidth="800" MinHeight="300" MinWidth="400">
     <Window.CommandBindings>
         <CommandBinding Command="components:Commands.Open" Executed="OpenCommand_Executed"/>
-        <CommandBinding Command="components:Commands.SaveAs" Executed="SaveAsCommand_Executed"/>
+        <CommandBinding Command="components:Commands.SaveAs" Executed="SaveAsCommand_Executed" CanExecute="SaveAsCommand_CanExecute"/>
         <CommandBinding Command="components:Commands.Exit" Executed="ExitCommand_Executed"/>
         <CommandBinding Command="components:Commands.Delete" Executed="DeleteCommand_Executed"/>
         <CommandBinding Command="components:Commands.Produce" Executed="ProduceCommand_Executed"/>

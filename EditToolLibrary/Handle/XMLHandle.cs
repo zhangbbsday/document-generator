@@ -23,10 +23,10 @@ namespace EditToolLibrary
         //需要优化
         private static void Split(XMLFileContainer file, XDocument main)
         {
-            if (file.File == null)
+            if (!File.Exists(file.Path))
                 throw new IOException("文件读取错误!");
 
-            XDocument document = file.File;
+            XDocument document = XDocument.Load(file.Path);
             var members = document.Descendants(DefaultSetting.XmlMarksDefault[XMLMarks.Member]);
             string nameSpace = document.Root
                             .Element(DefaultSetting.XmlMarksDefault[XMLMarks.Assembly])
@@ -47,46 +47,22 @@ namespace EditToolLibrary
                 ChangeToHtml(new XDocument(member));
             }
         }
-
         private static XDocument CreateMainFile()
         {
             return new XDocument(new XElement("Root"));
         }
-
         private static void AddNameSpace(XDocument document, string nameSpace)
         {
             document.Root.Add(new XElement(DefaultSetting.XmlNavigationMarksDefault[XMLNavigationMarks.NameSpace],
                         new XAttribute("name", nameSpace)));
         }
-        //需要优化
         private static XElement AddMainElement(XElement root, XElement xElement, string memberName)
         {
             XElement add;
             char type = memberName[0];
             string trueMemberName = memberName.GetMeaningfulString();
-
-            switch (type)
-            {
-                case 'T':
-                    add = new XElement(DefaultSetting.XmlNavigationMarksDefault[XMLNavigationMarks.Class],
+            add = new XElement(DefaultSetting.XmlNavigationMarksDefault[DefaultSetting.NavigationCharsDefault[type]],
                         new XAttribute("name", trueMemberName));
-                    break;
-                case 'P':
-                    add = new XElement(DefaultSetting.XmlNavigationMarksDefault[XMLNavigationMarks.Property],
-                        new XAttribute("name", trueMemberName));
-                    break;
-                case 'F':
-                    add = new XElement(DefaultSetting.XmlNavigationMarksDefault[XMLNavigationMarks.Field],
-                        new XAttribute("name", trueMemberName));
-                    break;
-                case 'M':
-                    add = new XElement(DefaultSetting.XmlNavigationMarksDefault[XMLNavigationMarks.Method],
-                        new XAttribute("name", trueMemberName));
-                    break;
-                default:
-                    add = new XElement("Null");
-                    break;
-            }
 
             while (xElement.Parent != root.Parent)
             {
@@ -106,12 +82,10 @@ namespace EditToolLibrary
             xElement.Add(add);
             return add;
         }
-
         private static void ChangeToHtml(XDocument xDocument, HtmlHandle.FileType fileType = HtmlHandle.FileType.MemberFile)
         {
             HtmlHandle.ChangeToHtml(xDocument, fileType);
         }
-
         private static void ClearDirectory()
         {
             string path = DefaultSetting.HtmlDefaultPath;

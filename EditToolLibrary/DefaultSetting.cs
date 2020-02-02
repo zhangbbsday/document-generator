@@ -38,6 +38,14 @@ namespace EditToolLibrary
             [XMLNavigationMarks.Property] = "property",
             [XMLNavigationMarks.Method] = "method"
         };
+
+        public static Dictionary<char, XMLNavigationMarks> NavigationCharsDefault { get; } = new Dictionary<char, XMLNavigationMarks>
+        {
+            ['T'] = XMLNavigationMarks.Class,
+            ['P'] = XMLNavigationMarks.Property,
+            ['F'] = XMLNavigationMarks.Field,
+            ['M'] = XMLNavigationMarks.Method,
+        };
         public static string HtmlFileTypeDefault { get; } = ".html";
         public static string XmlFileTypeDefault { get; } = ".xml";
         public static string OpenFileTypeFilterDefault { get; } = "XML文档|*.xml";

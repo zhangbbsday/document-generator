@@ -11,15 +11,11 @@ namespace EditToolLibrary
         public string Name { get; }
         public string Path { get; }
         public int MemberCount { get; }
-        public XDocument File { get; }
-
         public XMLFileContainer(string path)
         {
-            File = XDocument.Load(path);
-
             Name = path.GetFileName();
             Path = path;
-            MemberCount = File.Descendants(DefaultSetting.XmlMarksDefault[XMLMarks.Member]).Count();
+            MemberCount = XDocument.Load(path).Descendants(DefaultSetting.XmlMarksDefault[XMLMarks.Member]).Count();
         }
     }
 }
