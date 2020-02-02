@@ -8,8 +8,6 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 			<head>
 				<meta charset="utf-8"/>
 				<title><xsl:value-of select="@name"></xsl:value-of></title>
-				<!--<link rel="stylesheet" type="text/css" href="test-style.css"/>
-				<script src="test.js"></script>-->
         <style>
           body{
           font-family: "Lucida Console", "微软雅思", arial;
@@ -157,18 +155,10 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 			<body>
 				<div class="top-menu">
 					<div class="logo">
-						<!-- <img src="1.jpg" width="200" height="100"/> -->
 					</div>
 					<div class="doc-title">
 						<span><h1>UIFramework 文档</h1></span>
 					</div>
-					<!-- <div class="search-box">
-						<span>
-							<form>
-								<input type="text" name="search" placeholder="搜索……"/>
-							</form>
-						</span>
-					</div> -->
 				</div>
 				<div class="content">
           <div class="navigation-bar">

@@ -9,11 +9,11 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 				<title>导航</title>
         <style>
           body{
-						font-family: "Lucida Console", "微软雅思", arial;
-						font-size: 15px;
-						background-color: gainsboro;
-					}
-          
+          font-family: "Lucida Console", "微软雅思", arial;
+          font-size: 15px;
+          background-color: gainsboro;
+          }
+
           .navigation-title{
           text-align: center;
           margin: 20px 0;
@@ -54,13 +54,18 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
           margin-right: 5px;
           }
 
+
+
+          div.content-list a:link {color:blue;}
+          div.content-list a:visited {color:blue;}
           div.content-list a:hover{
           background-color: #555;
           color: white;
           }
+          div.content-list a:active {color:#FF704D;}
 
           .navigation-bar{
-            height: 100%
+          height: 100%
           }
         </style>
 			</head>
