@@ -14,7 +14,6 @@
                         <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Path=Name}"/>
                         <GridViewColumn Header="Path" DisplayMemberBinding="{Binding Path=Path}"/>
                         <GridViewColumn Header="MemberCount" DisplayMemberBinding="{Binding Path=MemberCount}"/>
-                        <GridViewColumn Header="State" DisplayMemberBinding="{Binding Path=FileState}"/>
                     </GridView.Columns>
                 </GridView>
             </ListView.View>

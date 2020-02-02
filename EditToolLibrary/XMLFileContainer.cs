@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Xml.Linq;
 
@@ -7,17 +8,9 @@ namespace EditToolLibrary
 {
     public class XMLFileContainer
     {
-        public enum State
-        {
-            Loading,
-            Ready,
-            Spliting
-        }
-
         public string Name { get; }
         public string Path { get; }
         public int MemberCount { get; }
-        public State FileState { get; set; }
         public XDocument File { get; }
 
         public XMLFileContainer(string path)
@@ -26,8 +19,7 @@ namespace EditToolLibrary
 
             Name = path.GetFileName();
             Path = path;
-            MemberCount = 0;
-            FileState = State.Loading;
+            MemberCount = File.Descendants(DefaultSetting.XmlMarksDefault[XMLMarks.Member]).Count();
         }
     }
 }

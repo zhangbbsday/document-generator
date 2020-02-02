@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:XMLToDocument"
         xmlns:components="clr-namespace:Components;assembly=Components"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" MaxHeight="450" MaxWidth="800" MinHeight="300" MinWidth="400">
     <Window.CommandBindings>
         <CommandBinding Command="components:Commands.Open" Executed="OpenCommand_Executed"/>
         <CommandBinding Command="components:Commands.SaveAs" Executed="SaveAsCommand_Executed"/>
