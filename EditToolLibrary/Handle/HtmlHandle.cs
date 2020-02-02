@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Xml.Linq;
+﻿using System.Xml.Linq;
 using System.IO;
 using System.Xml.Xsl;
-using System.Xml;
 
 namespace EditToolLibrary
 {

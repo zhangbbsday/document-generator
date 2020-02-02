@@ -1,9 +1,6 @@
 ﻿using System;
 using System.IO.Compression;
-using System.Collections.Generic;
-using System.Text;
 using System.IO;
-using System.Xml.Linq;
 
 namespace EditToolLibrary
 {
