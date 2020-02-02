@@ -46,7 +46,7 @@ namespace EditToolLibrary
         public static string StyleDefaultPath { get; } = System.IO.Directory.GetCurrentDirectory() + @"\data\style\";
         public static string MemberXslFileDefault { get; } = "member.xsl";
         public static string MainXslFileDefault { get; } = "main.xsl";
+        public static string NavigationXslFileDefault { get; } = "navigation.xsl";
         public static string MainHtmlFileDefault { get; } = "main.html";
-
     }
 }

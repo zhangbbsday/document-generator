@@ -8,8 +8,6 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 			<head>
 				<meta charset="utf-8"/>
 				<title><xsl:value-of select="@name"></xsl:value-of></title>
-				<!--<link rel="stylesheet" type="text/css" href="test-style.css"/>
-				<script src="test.js"></script>-->
         <style>
           body{
           font-family: "Lucida Console", "微软雅思", arial;
@@ -48,56 +46,16 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
           width: 100%;
           }
 
-          div.content-list .navigation-title{
-          text-align: center;
-          margin: 20px 0;
-          }
-
-          div.content-list .navigation-title h3{
-          padding: 0 0 10px 0;
-          border-bottom: #e6e6e6 1px solid;
-          }
-
-          div.content-list ul{
-          list-style-type: none;
-          padding-left: 0px;
-          }
-
-          div.content-list ul ul{
-          list-style-type: none;
-          padding-left: 30px;
-          }
-
-          div.content-list a{
-          display: block;
-          text-decoration: none;
-          line-height: 30px;
-          padding-top: 5px;
-          padding-bottom: 5px;
-          width: 100%;
-          word-wrap:break-word;
-          white-space: pre-wrap;
-          }
-
-          div.content-list a:before{
-          content: "@";
-          border: #e6e6e6 1px solid;
-          border-radius: 100px;
-          background-color: greenyellow;
-          padding: 5px;
-          margin-right: 5px;
-          }
-
-          div.content-list a:hover{
-          background-color: #555;
-          color: white;
+          iframe{
+          height : 100%;
           }
 
           .navigation-bar{
           background-color: white;
-          overflow: auto;
+          overflow: hidden;
           float: left;
           width: 20%;
+          height: 600px;
           margin-top: 30px;
           margin-right: 30px;
           max-height: 800px;
@@ -186,57 +144,26 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
           width: 100%;
           }
         </style>
-			</head>
+        <script language="JavaScript">
+
+          if (window != top)
+
+          top.location.href = location.href;
+
+        </script>
+      </head>
 			<body>
 				<div class="top-menu">
 					<div class="logo">
-						<!-- <img src="1.jpg" width="200" height="100"/> -->
 					</div>
 					<div class="doc-title">
 						<span><h1>UIFramework 文档</h1></span>
-					</div>
-					<!-- <div class="search-box">
-						<span>
-							<form>
-								<input type="text" name="search" placeholder="搜索……"/>
-							</form>
-						</span>
-					</div> -->
+					</div>>
 				</div>
 				<div class="content">
-					<div class="navigation-bar">
-						<div class="content-list">
-							<span class="navigation-title">
-								<h3>导航栏</h3>
-							</span>
-							<ul>
-								<li>	
-									<a href="test2.html">NameSpace1</a>
-									<ul>
-										<li>
-											<a href="#">Class1</a>
-											<ul>
-												<a href="#">Method</a>
-											</ul>
-										</li>
-									</ul>
-								</li>
-								<li>
-									<a href="#">NameSpace2</a>
-									<ul>
-										<a href="#">Class2</a>
-										<ul>
-											<a href="#">Method</a>
-										</ul>
-									</ul>
-									<ul>
-										<a href="#">Class3</a>
-									</ul>
-								</li>
-							</ul>
-						</div>
-						<div class="sliderbar"></div>
-					</div>
+          <div class="navigation-bar">
+            <iframe src="navigation.html"></iframe>
+          </div>
 					<div class="doc">
 					<div class="member-title">
 						<h1><xsl:value-of select="@name"></xsl:value-of></h1>
@@ -324,11 +251,21 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 		<p><xsl:apply-templates/></p>
 	</xsl:template>
 	<xsl:template match="see">
-		<a href="#"><xsl:value-of select="@cref"></xsl:value-of></a>
+    <a>
+      <xsl:attribute name="href">
+        <xsl:value-of select="@cref"/>.html
+      </xsl:attribute>
+      <xsl:value-of select="@cref"/>
+    </a>
 		<br/>
 	</xsl:template>
 	<xsl:template match="seealso">
-		<a href="#"><xsl:value-of select="@cref"></xsl:value-of></a>
+    <a>
+      <xsl:attribute name="href">
+        <xsl:value-of select="@cref"/>.html
+      </xsl:attribute>
+      <xsl:value-of select="@cref"/>
+    </a>
 		<br/>
 	</xsl:template>
 	<xsl:template match="param">

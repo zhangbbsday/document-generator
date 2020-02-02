@@ -33,8 +33,15 @@ namespace EditToolLibrary
         //待补充
         private static void ChangeMain(XDocument document, string path)
         {
+            string pathNew = path + "navigation";
             path += "main";
             document.Save(path + DefaultSetting.XmlFileTypeDefault);
+            Change(DefaultSetting.StyleDefaultPath + DefaultSetting.MainXslFileDefault,
+                path + DefaultSetting.XmlFileTypeDefault, path + DefaultSetting.HtmlFileTypeDefault);
+            Change(DefaultSetting.StyleDefaultPath + DefaultSetting.NavigationXslFileDefault,
+                path + DefaultSetting.XmlFileTypeDefault, pathNew + DefaultSetting.HtmlFileTypeDefault);
+
+            File.Delete(path + DefaultSetting.XmlFileTypeDefault);
         }
 
         //需要优化
