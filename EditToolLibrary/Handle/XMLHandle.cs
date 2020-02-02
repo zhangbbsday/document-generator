@@ -41,7 +41,9 @@ namespace EditToolLibrary
             XElement xElement = nameSpaceRoot;
             foreach (var member in members)
             {
-                xElement = AddMainElement(nameSpaceRoot, xElement, member.Attribute("name").Value);
+                string name = member.Attribute("name").Value.RemoveInvalidCharacter();
+                member.SetAttributeValue("name", name.GetMeaningfulString());
+                xElement = AddMainElement(nameSpaceRoot, xElement, name);
                 ChangeToHtml(new XDocument(member));
             }
         }
@@ -61,26 +63,25 @@ namespace EditToolLibrary
         {
             XElement add;
             char type = memberName[0];
-            memberName = memberName.RemoveInvalidCharacter();
-            string trueMemberName = memberName.Substring(1);
+            string trueMemberName = memberName.GetMeaningfulString();
 
             switch (type)
             {
                 case 'T':
                     add = new XElement(DefaultSetting.XmlNavigationMarksDefault[XMLNavigationMarks.Class],
-                        new XAttribute("name", memberName));
+                        new XAttribute("name", trueMemberName));
                     break;
                 case 'P':
                     add = new XElement(DefaultSetting.XmlNavigationMarksDefault[XMLNavigationMarks.Property],
-                        new XAttribute("name", memberName));
+                        new XAttribute("name", trueMemberName));
                     break;
                 case 'F':
                     add = new XElement(DefaultSetting.XmlNavigationMarksDefault[XMLNavigationMarks.Field],
-                        new XAttribute("name", memberName));
+                        new XAttribute("name", trueMemberName));
                     break;
                 case 'M':
                     add = new XElement(DefaultSetting.XmlNavigationMarksDefault[XMLNavigationMarks.Method],
-                        new XAttribute("name", memberName));
+                        new XAttribute("name", trueMemberName));
                     break;
                 default:
                     add = new XElement("Null");
@@ -89,7 +90,7 @@ namespace EditToolLibrary
 
             while (xElement.Parent != root.Parent)
             {
-                if (trueMemberName.StartsWith(xElement.Attribute("name").Value.Substring(1)))
+                if (trueMemberName.StartsWith(xElement.Attribute("name").Value))
                     break;
                 xElement = xElement.Parent;
             }
